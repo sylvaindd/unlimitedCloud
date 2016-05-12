@@ -1,6 +1,9 @@
 package webSockets;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -11,10 +14,10 @@ import javax.websocket.server.ServerEndpoint;
 /**
  * Created by thoma on 12/05/2016.
  */
-@ServerEndpoint("/lebonnuage")
+@ServerEndpoint(value="/lebonnuage" , encoders = {MessageEncoder.class}, decoders = {MessageDecoder.class})
 public class WebSocketLeBonNuage {
 
-
+    private static final Set sessions = Collections.synchronizedSet(new HashSet());
 
         /**
          * @OnOpen allows us to intercept the creation of a new session.
@@ -30,6 +33,7 @@ public class WebSocketLeBonNuage {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            sessions.add(session);
         }
 
         /**
@@ -39,11 +43,7 @@ public class WebSocketLeBonNuage {
         @OnMessage
         public void onMessage(Message message, Session session){
             System.out.println("Message from " + session.getId() + ": " + message);
-            try {
-                session.getBasicRemote().sendText(message);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+
         }
 
         /**
@@ -54,6 +54,7 @@ public class WebSocketLeBonNuage {
         @OnClose
         public void onClose(Session session){
             System.out.println("Session " +session.getId()+" has ended");
+            sessions.remove(session);
         }
 
 }

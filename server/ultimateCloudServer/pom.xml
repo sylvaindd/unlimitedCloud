@@ -34,5 +34,16 @@
           <artifactId>javax.json</artifactId>
           <version>1.0.4</version>
       </dependency>
+      <dependency>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-server</artifactId>
+          <version>9.3.9.M1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-websocket</artifactId>
+          <version>8.1.19.v20160209</version>
+      </dependency>
+
   </dependencies>
 </project>
