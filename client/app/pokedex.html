@@ -1,0 +1,6 @@
+<h1>Pokésir</h1>
+<poke-search></poke-search>
+<select [(ngModel)]="selectedIDPokemon" (ngModelChange)="getSelectedPokemon()">
+    <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{pokemon.name}}</option>
+</select>
+<h3>{{selectedPokemon.name}}</h3>
