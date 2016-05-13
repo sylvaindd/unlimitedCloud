@@ -1,72 +1,37 @@
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    traceur = require('gulp-traceur'),
-    webserver = require('gulp-webserver');
+const gulp = require('gulp');
+const ts = require("gulp-typescript");
+const server = require('gulp-server-livereload');
 
-// run init tasks
-gulp.task('default', ['dependencies', 'js', 'html', 'css']);
+var tsProject = ts.createProject('tsconfig.json');
 
-// run development task
-gulp.task('dev', ['watch', 'serve']);
+const paths = {
+    app : "app/",
+    srcFiles : ["app/**/*.ts"]
+};
 
-// serve the build dir
-gulp.task('serve', function () {
-  gulp.src('build')
-    .pipe(webserver({
-      open: true
-    }));
+gulp.task('build', function() {
+    return tsProject.src()
+        .pipe(ts(tsProject)).js
+        .pipe(gulp.dest(paths.app));
 });
 
-// watch for changes and run the relevant task
-gulp.task('watch', function () {
-  gulp.watch('src/**/*.js', ['js']);
-  gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('src/**/*.css', ['css']);
+gulp.task("watch", function() {
+    gulp.watch(paths.srcFiles, ['build']);
 });
 
-// move dependencies into build dir
-gulp.task('dependencies', function () {
-  return gulp.src([
-    'node_modules/traceur/bin/traceur-runtime.js',
-    'node_modules/systemjs/dist/system-csp-production.src.js',
-    'node_modules/systemjs/dist/system.js',
-    'node_modules/reflect-metadata/Reflect.js',
-    'node_modules/angular2/bundles/angular2.js',
-    'node_modules/angular2/bundles/angular2-polyfills.js',
-    'node_modules/rxjs/bundles/Rx.js',
-    'node_modules/es6-shim/es6-shim.min.js',
-    'node_modules/es6-shim/es6-shim.map'
-  ])
-    .pipe(gulp.dest('build/lib'));
-});
+gulp.task('webserver', ['build', 'watch'], () =>
+    gulp.src(".")
+        .pipe(server({
+            livereload: {
+                enable: true,
+                filter: function(filePath, cb) {
+                    cb(!/(\.idea)|(node_modules)|(\.js)|(\.git)/.test(filePath))
+                }
+            },
+            directoryListing: false,
+            open: true,
+            port: 9000
+        }))
+);
 
-// transpile & move js
-gulp.task('js', function () {
-  return gulp.src('src/**/*.js')
-    .pipe(rename({
-      extname: ''
-    }))
-    .pipe(traceur({
-      modules: 'instantiate',
-      moduleName: true,
-      annotations: true,
-      types: true,
-      memberVariables: true
-    }))
-    .pipe(rename({
-      extname: '.js'
-    }))
-    .pipe(gulp.dest('build'));
-});
-
-// move html
-gulp.task('html', function () {
-  return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('build'))
-});
-
-// move css
-gulp.task('css', function () {
-  return gulp.src('src/**/*.css')
-    .pipe(gulp.dest('build'))
-});
+gulp.task("default", ["build", "webserver"]);
