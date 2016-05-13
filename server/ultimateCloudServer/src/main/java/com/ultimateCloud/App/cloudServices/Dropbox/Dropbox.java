@@ -1,17 +1,55 @@
 package com.ultimateCloud.App.cloudServices.Dropbox;
 
 import com.ultimateCloud.App.interfaces.CloudServiceInterface;
+import com.ultimateCloud.App.models.FileCloud;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.filter.LoggingFilter;
 
 import javax.ws.rs.Path;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
+import java.util.List;
 
 /**
  * Created by thoma on 10/05/2016.
  */
-@Path("https://api.dropboxapi.com/2/")
 public class Dropbox implements CloudServiceInterface {
-    public static final String apiBaseUrl = "https://api.dropboxapi.com/2/files/list_folder";
+    private final boolean DEBUG =true;
+    private WebTarget webTarget;
+    public Dropbox(){
+        ClientConfig config = new ClientConfig();
+        Client client = ClientBuilder.newClient(config);
+        if(DEBUG)
+        client.register(new LoggingFilter());
+        webTarget = client.target(getBaseURI());
 
-    public void getFileList() {
+
+
 
     }
+    public String getBaseURI() {
+        return "https://api.dropboxapi.com/2/";
+    }
+
+
+
+    public List<FileCloud> getFileList(){
+        String response = webTarget.
+                path("files/list_folder").
+                request().
+                header(HttpHeaders.AUTHORIZATION,"Bearer GBre0x3PlHAAAAAAAAAACWPyyJYxh2ljcf3dttoT5tUKfLwv8slxe0payqYYswjL").
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(new listFileJson())).readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
+        return null;
+    }
+
 }
