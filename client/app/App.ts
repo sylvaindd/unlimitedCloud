@@ -8,8 +8,10 @@ import {$WebSocket} from 'angular2-websocket/angular2-websocket'
 })
 export class App {
 
+    private ws:$WebSocket;
+
     constructor(){
-        var ws = new $WebSocket("127.0.0.1:8080/rest");
-        ws.send("connect");
+        this.ws = new $WebSocket("ws://127.0.0.1:8080/rest");
+        this.ws.send("connect");
     }
 }
