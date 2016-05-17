@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="maven project&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/interfaces/CloudServiceInterface.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/interfaces/CloudServiceInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml" />
     </list>
     <list id="0000f9e0-c132-44bf-b76c-530166596006" name="New changelist" comment="" />
     <ignored path="unlimitedCloud.iws" />
@@ -75,8 +70,8 @@
       <file leaf-file-name="GoogleDrive.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding>
                 <element signature="e#1223#1234#0" expanded="true" />
               </folding>
@@ -912,7 +907,7 @@
       <workItem from="1462887353489" duration="15354000" />
       <workItem from="1463144912762" duration="1206000" />
       <workItem from="1463485122312" duration="327000" />
-      <workItem from="1463487105154" duration="2234000" />
+      <workItem from="1463487105154" duration="2295000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -956,11 +951,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463485192768</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ajout d'une fonction auth dans les classes DropBox, GoogleDrive &amp; l'interfae associée">
+      <created>1463489534547</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1463489534547</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19121000" />
+    <option name="totallyTimeSpent" value="19182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1010,7 +1012,8 @@
     <MESSAGE value="ideas" />
     <MESSAGE value="maven project&#10;" />
     <MESSAGE value="connexion&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="connexion&#10;" />
+    <MESSAGE value="Ajout d'une fonction auth dans les classes DropBox, GoogleDrive &amp; l'interfae associée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'une fonction auth dans les classes DropBox, GoogleDrive &amp; l'interfae associée" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1131,8 +1134,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding>
             <element signature="e#1223#1234#0" expanded="true" />
           </folding>
