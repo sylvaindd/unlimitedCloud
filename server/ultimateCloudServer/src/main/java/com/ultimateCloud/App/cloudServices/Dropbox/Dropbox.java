@@ -38,7 +38,10 @@ public class Dropbox implements CloudServiceInterface {
         return "https://api.dropboxapi.com/2/";
     }
 
-
+    public String getAuth(){
+        //TODO
+        return "";
+    }
 
     public List<FileCloud> getFileList(){
         String response = webTarget.

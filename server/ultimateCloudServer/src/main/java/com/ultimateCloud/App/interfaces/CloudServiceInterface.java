@@ -11,4 +11,5 @@ import java.util.List;
 public interface CloudServiceInterface {
     public String getBaseURI();
     public List<FileCloud> getFileList();
+    public String getAuth();
 }
