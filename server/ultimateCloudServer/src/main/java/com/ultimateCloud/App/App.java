@@ -3,20 +3,12 @@ package com.ultimateCloud.App;
 import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
-import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.util.component.LifeCycle;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.websocket.jsr356.server.ServerContainer;
 import org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer;
-import org.eclipse.jetty.websocket.server.WebSocketHandler;
-import org.eclipse.jetty.websocket.servlet.WebSocketServletFactory;
+import webSockets.EventServlet;
 import webSockets.WebSocketLeBonNuage;
-
-import javax.websocket.DeploymentException;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
 
 /**
  * Hello world!
@@ -42,6 +34,9 @@ public class App
 
         try
         {
+
+            ServletHolder holderEvents = new ServletHolder("ws-events", EventServlet.class);
+            context.addServlet(holderEvents, "/REST/*");
             // Initialize javax.websocket layer
             ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(context);
 
