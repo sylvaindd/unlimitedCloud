@@ -70,5 +70,7 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.3.9.M1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-websocket:8.1.19.v20160209" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.3.9.M1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
   </component>
 </module>

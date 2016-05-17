@@ -6,6 +6,7 @@ package webSockets;
 
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketAdapter;
+import org.json.JSONObject;
 
 public class EventSocket extends WebSocketAdapter {
     @Override
@@ -18,6 +19,17 @@ public class EventSocket extends WebSocketAdapter {
     public void onWebSocketText(String message) {
         super.onWebSocketText(message);
         System.out.println("Received TEXT message: " + message);
+        JSONObject jsonObj = new JSONObject(message);
+        jsonObj.getString("function");
+        String function = jsonObj.getString("function");
+        if (function.equals("getFileList")) {
+
+        } else if (function.equals("download")) {
+
+        } else if (function.equals("upload")) {
+
+
+        }
     }
 
     @Override

@@ -43,13 +43,13 @@ public class Dropbox implements CloudServiceInterface {
         return "";
     }
 
-    public List<FileCloud> getFileList(){
+    public List<FileCloud> getFileList(listFileJson listFileJson){
         String response = webTarget.
                 path("files/list_folder").
                 request().
                 header(HttpHeaders.AUTHORIZATION,"Bearer GBre0x3PlHAAAAAAAAAACWPyyJYxh2ljcf3dttoT5tUKfLwv8slxe0payqYYswjL").
                 header(HttpHeaders.CONTENT_TYPE,"application/json").
-                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(new listFileJson())).readEntity(String.class);
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
         return null;
