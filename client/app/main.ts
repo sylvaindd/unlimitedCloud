@@ -1,7 +1,9 @@
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {HTTP_PROVIDERS} from '@angular/http'; // Dependencies for HTTP service
 import 'rxjs/Rx'; // For using methods on observables
-import {PokedexComponent} from "./PokedexComponent";
+import {App} from "./App";
+import {Connection} from "./Connection";
 
-bootstrap(PokedexComponent, [HTTP_PROVIDERS]);
+bootstrap(App, [HTTP_PROVIDERS]);
+bootstrap(Connection, [HTTP_PROVIDERS]);
 
