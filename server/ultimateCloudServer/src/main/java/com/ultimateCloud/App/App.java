@@ -26,19 +26,15 @@ public class App
         connector.setPort(8080);
         server.addConnector(connector);
 
-        // Setup the basic application "context" for this application at "/"
-        // This is also known as the handler tree (in jetty speak)
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
-        server.setHandler(context);
+        ServletContextHandler handler = new ServletContextHandler(server, "/lebonnuage");
+        handler.addServlet(MonNuage.class, "/");
 
         try
         {
-
             ServletHolder holderEvents = new ServletHolder("ws-events", EventServlet.class);
-            context.addServlet(holderEvents, "/REST/*");
+            handler.addServlet(holderEvents, "/REST/*");
             // Initialize javax.websocket layer
-            ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(context);
+            ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(handler);
 
             // Add WebSocket endpoint to javax.websocket layer
             wscontainer.addEndpoint(WebSocketLeBonNuage.class);
