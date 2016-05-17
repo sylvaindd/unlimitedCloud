@@ -5,7 +5,8 @@
         'app':                        'app', // 'dist',
         'rxjs':                       'node_modules/rxjs',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        '@angular':                   'node_modules/@angular'
+        '@angular':                   'node_modules/@angular',
+        'angular2-websocket':         'node_modules/angular2-websocket'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -26,6 +27,7 @@
         '@angular/router-deprecated',
         '@angular/testing',
         '@angular/upgrade',
+        'angular2-websocket'
     ];
 
     // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
