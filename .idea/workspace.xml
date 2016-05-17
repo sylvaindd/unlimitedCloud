@@ -907,7 +907,7 @@
       <workItem from="1462887353489" duration="15354000" />
       <workItem from="1463144912762" duration="1206000" />
       <workItem from="1463485122312" duration="327000" />
-      <workItem from="1463487105154" duration="2295000" />
+      <workItem from="1463487105154" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -958,11 +958,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463489534547</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajout d'une fonction auth dans les classes DropBox, GoogleDrive &amp; l'interfae associée">
+      <created>1463489550518</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1463489550518</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19182000" />
+    <option name="totallyTimeSpent" value="19192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
