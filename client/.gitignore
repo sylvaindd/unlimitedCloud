@@ -35,6 +35,7 @@ jspm_packages
 .node_repl_history
 
 .idea/
+workspace.xml
 
 app/**/*.js
 *.js.map
