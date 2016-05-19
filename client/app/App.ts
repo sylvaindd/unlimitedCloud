@@ -3,13 +3,14 @@ import {Connection} from "./Connection";
 
 @Component({
     selector: "app",
-    templateUrl: "app/app.html"
+    templateUrl: "app/html/app.html",
+    directives:[Connection]
 })
 export class App {
 
     private ws:WebSocket;
     constructor(){
-        this.ws = new WebSocket("ws://127.0.0.1:8080/rest");
+        this.ws = new WebSocket("ws://127.0.0.1:8080/REST/");
 
         this.ws.onopen = function(){
             console.log('Connection open!');

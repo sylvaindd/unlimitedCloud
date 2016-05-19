@@ -1,0 +1,14 @@
+<link href="../css/signin.css" rel="stylesheet">
+
+<div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Connectez vous</h2>
+        <label for="inputEmail" class="sr-only">Adresse mail</label>
+        <input [(ngModel)]="adresse" type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
+        <label for="inputPassword" class="sr-only">Mot de passe</label>
+        <input [(ngModel)]="mdp" type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onSubmit()">Connexion</button>
+      </form>
+ </div>
+<socialConnection></socialConnection>
