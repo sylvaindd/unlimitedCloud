@@ -1,31 +1,48 @@
 import {Component} from '@angular/core';
-import {Explorer} from "./Explorer";
-import {Routes , Router} from '@angular/router';
+/// <reference path="typings/jquery/jquery.d.ts" />
+import {Validation} from "./utils/Utils";
+import {APIService} from "./services/APIService";
+
+declare var jQuery:JQueryStatic;
 
 @Component({
     selector: "connection",
-    templateUrl: "app/html/connection.html"
-    // providers: [Router]
-})
+    templateUrl: "app/html/connection.html",
 
-// @Routes([
-//     {path: '/Explorer', component: Explorer},
-// ])
+    providers: [APIService],
+})
 
 export class Connection {
 
-    mdp:String;
-    adresse:String;
+    password:String;
+    mailOrUsername:String;
 
-    constructor() {
-        this.adresse = "";
-        this.mdp = "";
+    constructor(private apiService:APIService) {
+        this.password = "";
+        this.mailOrUsername = "";
     }
 
     onSubmit() {
-        if (this.adresse != "" && this.adresse.indexOf("@") > -1 && this.mdp != "") {
-            console.log("Submit ! " + this.adresse + " - " + this.mdp);
-            // this.router.navigate(['/Explorer']);
+        let valid = true;
+
+        console.log("Submit ! " + this.mailOrUsername + " - " + this.password);
+        if (this.mailOrUsername.length <= 6) {
+            valid = false;
+            Validation.errorInput("mailOrUsername");
+        } else {
+            Validation.noErrorInput("mailOrUsername")
         }
+
+        if (this.password.length <= 6) {
+            valid = false;
+            Validation.errorInput("password");
+        } else {
+            Validation.noErrorInput("password")
+        }
+
+        if (!valid)
+            return;
+
+
     }
 }

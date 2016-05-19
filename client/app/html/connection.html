@@ -1,12 +1,14 @@
 <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form">
-    <div class="form-group">
-        <input [(ngModel)]="mailOrUsername" type="text" name="mail" id="mail" tabindex="1"
+    <div class="form-group has-feedback">
+        <input [(ngModel)]="mailOrUsername" type="text" name="mailOrUsername" id="mailOrUsername" tabindex="1"
                class="form-control"
                placeholder="Mail or username" value="">
+        <span aria-hidden="true" class="glyphicon glyphicon-remove form-control-feedback" style="display: none"></span>
     </div>
-    <div class="form-group">
-        <input [(ngModel)]="mdp" type="password" name="password" id="password" tabindex="2"
+    <div class="form-group has-feedback">
+        <input [(ngModel)]="password" type="password" name="password" id="password" tabindex="2"
                class="form-control" placeholder="Password">
+        <span aria-hidden="true" class="glyphicon glyphicon-remove form-control-feedback" style="display: none"></span>
     </div>
     <div class="form-group text-center">
         <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
