@@ -4,6 +4,7 @@ import com.ultimateCloud.App.interfaces.CloudServiceInterface;
 import com.ultimateCloud.App.models.FileCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
+import org.json.JSONObject;
 
 import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
@@ -12,6 +13,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 import java.util.List;
 
 /**
@@ -41,19 +43,18 @@ public class Dropbox extends CloudServiceInterface {
         return response;
     }
 
-    public JsonObject getToken(tokenJson tokenJson){
+    public String getToken(MultivaluedMap formData){
         webTargetMain = client.target("");
 
         String response = webTargetMain.
                 path("https://api.dropboxapi.com/oauth2/token").
                 request().
-                header(HttpHeaders.CONTENT_TYPE,"application/json").
-                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(tokenJson)).readEntity(String.class);
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.form(formData)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
         webTargetMain = client.target(baseUri);
 
-        return null;
+        return response ;
     }
 
     public JsonObject getFileInformations(String path){
