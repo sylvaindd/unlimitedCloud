@@ -14,6 +14,7 @@ export class Register {
 
     mail:String;
     username:String;
+    phone:String;
     password:String;
     repassword:String;
 
@@ -22,16 +23,22 @@ export class Register {
         this.username = "";
         this.password = "";
         this.repassword = "";
+        this.phone = "";
     }
 
     onSubmit(){
-        console.log("Submit ! " + this.username + " - " + this.mail + this.password + " - " + this.repassword);
         let valid = true;
         if (Validation.validateEmail(this.mail)) {
             Validation.noErrorInput("mail")
         } else {
             valid = false;
             Validation.errorInput("mail");
+        }
+        if (Validation.validatePhone(this.phone)) {
+            Validation.noErrorInput("phone")
+        } else {
+            valid = false;
+            Validation.errorInput("phone");
         }
         if (this.username.length >= 6) {
             Validation.noErrorInput("username")
@@ -57,6 +64,10 @@ export class Register {
         if(!valid)
             return;
 
-        this.apiService.register(this.username, this.mail, this.password);
+        let callback = function(data){
+            console.log(data.succes);
+        };
+        
+        this.apiService.register(this.username, this.mail, this.phone, this.password, callback);
     }
 }

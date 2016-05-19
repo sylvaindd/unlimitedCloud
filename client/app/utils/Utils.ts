@@ -4,9 +4,15 @@ declare var jQuery: JQueryStatic;
 
 export class Validation {
     static validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
+
+    static validatePhone(phone){
+        let re = /^\d{10}$/;
+        return re.test(phone);
+    }
+
     static errorInput(selector){
         jQuery("#"+selector).parent(".form-group").addClass("has-error");
         jQuery("#"+selector).parent(".form-group").find("span").show();

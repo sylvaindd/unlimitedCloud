@@ -25,7 +25,6 @@ export class Connection {
     onSubmit() {
         let valid = true;
 
-        console.log("Submit ! " + this.mailOrUsername + " - " + this.password);
         if (this.mailOrUsername.length < 6) {
             valid = false;
             Validation.errorInput("mailOrUsername");
@@ -43,7 +42,14 @@ export class Connection {
         if (!valid)
             return;
 
-        this.router.navigate(['/App']);
+        let callback = function(data){
+            console.log(data.succes);
+            if(data.succes){
+                this.router.navigate(['/App']);
+            }
+        }.bind(this);
+
+        this.apiService.authent(this.mailOrUsername, this.password, callback);
 
     }
 }

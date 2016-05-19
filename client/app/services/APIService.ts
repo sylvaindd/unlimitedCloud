@@ -9,49 +9,44 @@ export class APIService {
 
     }
 
-    authenticate(username, password) {
-        var body = "username=" + username + "&password=" + password;
+    authent(mailOrUsername, password, callback) {
+
+        var body = {mailOrUsername: mailOrUsername, password: password};
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
         let result, error, data;
 
-        return this.http
-            .post('http://localhost:8080/sessions/create',
-                body, {
+        this.http
+            .post('http://localhost:8080/lebonnuage/authent',
+                JSON.stringify(body), {
                     headers: headers
                 })
             .map(response => response.json())
             .subscribe(
-                response => {
-                    data = response;
-                    console.log(data);
-                },
+                response => callback(response),
                 err => error = err.json().message,
                 () => console.log('Authentication Complete')
             );
     }
 
-    register(username, mail, password) {
+    register(username, mail, phone, password, callback) {
 
-        var body = {username : username, mail : mail, password : password};
+        var body = {username: username, mail: mail, phone: phone, password: password};
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
         let result, error, data;
 
-        return this.http
+        this.http
             .post('http://localhost:8080/lebonnuage/register',
                 JSON.stringify(body), {
                     headers: headers
                 })
             .map(response => response.json())
             .subscribe(
-                response => {
-                    data = response;
-                    console.log(data);
-                },
+                response => callback(response),
                 err => error = err.json().message,
                 () => console.log('Authentication Complete')
             );
