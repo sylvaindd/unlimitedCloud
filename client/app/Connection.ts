@@ -1,23 +1,26 @@
 import {Component} from '@angular/core';
 import {Explorer} from "./Explorer";
+import {Tabs} from "./Tabs";
+import {Tab} from "./Tab";
 import {Routes , Router} from '@angular/router';
 
 @Component({
     selector: "connection",
-    templateUrl: "app/html/connection.html"
+    templateUrl: "app/html/connection.html",
+    directives: [Tabs, Tab]
+    // providers: [Router]
 })
 
-@Routes([
-    {path: '/Connection', component: Connection},
-    {path: '/Explorer', component: Explorer},
-])
+// @Routes([
+//     {path: '/Explorer', component: Explorer},
+// ])
 
 export class Connection {
 
     mdp:String;
     adresse:String;
 
-    constructor(private router:Router) {
+    constructor() {
         this.adresse = "";
         this.mdp = "";
     }

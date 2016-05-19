@@ -7,6 +7,6 @@ import 'rxjs/Rx'; // For using methods on observables
 import {App} from "./App";
 import {Connection} from "./Connection";
 
-//bootstrap(Connection, [ROUTER_PROVIDERS]);
-bootstrap(Explorer, [HTTP_PROVIDERS]);
+bootstrap(App, [HTTP_PROVIDERS]);
+// bootstrap(Explorer, [HTTP_PROVIDERS]);
 
