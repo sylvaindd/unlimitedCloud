@@ -1,5 +1,6 @@
 package com.ultimateCloud.App;
 
+import com.ultimateCloud.App.callbacks.AskAuthorise;
 import com.ultimateCloud.App.callbacks.Callbackdropboxauthorise;
 import com.ultimateCloud.App.callbacks.Callbackdropboxtoken;
 import com.ultimateCloud.App.callbacks.MonNuage;
@@ -36,11 +37,16 @@ public class App
 
         ServletContextHandler handlerCallbackdropboxauthorise = new ServletContextHandler(server, "/lebonnuage/callbackdropboxauthorise");
         handlerCallbackdropboxauthorise.addServlet(Callbackdropboxauthorise.class, "/");
+
         ServletContextHandler handlerCallbackdropboxtoken = new ServletContextHandler(server, "/lebonnuage/callbackdropboxtoken");
         handlerCallbackdropboxtoken.addServlet(Callbackdropboxtoken.class, "/");
 
+        ServletContextHandler handlerAskAuthorise = new ServletContextHandler(server, "/lebonnuage/askauthorise");
+        handlerAskAuthorise.addServlet(AskAuthorise.class, "/");
+
         HandlerCollection collection = new HandlerCollection();
         collection.addHandler(handlerCallbackdropboxauthorise);
+        collection.addHandler(handlerAskAuthorise);
         collection.addHandler(handlerCallbackdropboxtoken);
 
 
