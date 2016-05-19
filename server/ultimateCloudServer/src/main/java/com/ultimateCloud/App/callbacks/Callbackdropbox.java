@@ -2,6 +2,7 @@ package com.ultimateCloud.App.callbacks;
 
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
+import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import org.eclipse.jetty.http.HttpStatus;
 import org.json.JSONObject;
 
@@ -24,26 +25,16 @@ public class Callbackdropbox extends HttpServlet {
         resp.setStatus(HttpStatus.OK_200);
         String ourToken = req.getParameter("state");
             String code = req.getParameter("code");
+        String user_id = req.getParameter("user_id");
         if(code !=null && code!=""){
             //onrécupère le code
             //store code in BDD
-            //TODO
+            JDBCMysSQL.getInstance().addDropBoxCodeToOurAccount(code,user_id,ourToken);
             //and asktoken
             System.out.println("code"+code);
             Dropbox dropbox = new Dropbox();
+            dropbox.getToken(code,ourToken);
 
-            MultivaluedMap formData = new MultivaluedMapImpl();
-            formData.add("code", code);
-            formData.add("grant_type", "authorization_code");
-            formData.add("client_id", dropbox.app_key);
-            formData.add("client_secret",  dropbox.secret_key);
-            formData.add("redirect_uri",  "http://localhost:8080/lebonnuage/callbackdropboxauthorise");
-
-            JSONObject obj = new JSONObject(dropbox.getToken(formData));
-            String token =   obj.getString("access_token");
-            String user_dropbox_id =   obj.getString("uid");
-           System.out.println("user_dropbox_id:"+user_dropbox_id+"token :"+token);
-            //store token in bdd
         }
 
     }
