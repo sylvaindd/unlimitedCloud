@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Drawer} from "./Drawer";
 import {DossierComponent} from "./DossierComponent";
 import {FichierComponent} from "./FichierComponent";
 import {Dossier} from "./models/Dossier";
@@ -8,8 +7,11 @@ import {Fichier} from "./models/Fichier";
 @Component({
     selector: "explorer",
     templateUrl: "app/html/explorer.html",
-    directives:[Drawer, DossierComponent, FichierComponent]
+    directives:[DossierComponent, FichierComponent]
 })
+
+
+
 export class Explorer {
 
     private dossiers:Array<Dossier>;
