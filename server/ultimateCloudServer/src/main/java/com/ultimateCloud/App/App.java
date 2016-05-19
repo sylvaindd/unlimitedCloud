@@ -2,6 +2,7 @@ package com.ultimateCloud.App;
 
 import com.ultimateCloud.App.callbacks.AskAuthorise;
 import com.ultimateCloud.App.callbacks.Callbackdropbox;
+import com.ultimateCloud.App.callbacks.MonNuage;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.HandlerCollection;
@@ -30,7 +31,7 @@ public class App
 
 
         ServletContextHandler handler = new ServletContextHandler(server, "/lebonnuage");
-        handler.addServlet(Callbackdropbox.class, "/");
+        handler.addServlet(MonNuage.class, "/");
 
         ServletContextHandler handlerCallbackdropboxauthorise = new ServletContextHandler(server, "/lebonnuage/callbackdropboxauthorise");
         handlerCallbackdropboxauthorise.addServlet(Callbackdropbox.class, "/");
