@@ -19,12 +19,10 @@ public class AskAuthorise extends HttpServlet {
 
     {
         resp.setStatus(HttpStatus.OK_200);
-
+String tokenUltimateCloud = req.getParameter("token_ultimate_cloud");
         Dropbox dropbox = new Dropbox();
-        System.out.println("reponseaskauthorise"+dropbox.getAuth());
-        String rst = dropbox.getAuth();
-        rst.replace("<form action=\"/","<form action=\"https://www.dropbox.com/oauth2/authorize/");
-        resp.getWriter().write(dropbox.getAuth());
+        System.out.println("reponseaskauthorise"+dropbox.getAuth(tokenUltimateCloud));
+        resp.getWriter().write(dropbox.getAuth(tokenUltimateCloud));
         resp.getWriter().flush();
         resp.getWriter().close();
 
