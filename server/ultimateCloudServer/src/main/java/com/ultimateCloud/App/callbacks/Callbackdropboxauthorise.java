@@ -1,4 +1,4 @@
-package com.ultimateCloud.App;
+package com.ultimateCloud.App.callbacks;
 
 import org.eclipse.jetty.http.HttpStatus;
 
@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Sylvain on 17/05/2016.
+ * Created by thoma on 19/05/2016.
  */
-public class MonNuage extends HttpServlet {
-
+public class Callbackdropboxauthorise  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
 
     {
         resp.setStatus(HttpStatus.OK_200);
-        resp.getWriter().println("EmbeddedJetty");
-    }
 
+        String ourToken = req.getParameter("state");
+        //store code in BDD
+        //and asktoken
+    }
 }

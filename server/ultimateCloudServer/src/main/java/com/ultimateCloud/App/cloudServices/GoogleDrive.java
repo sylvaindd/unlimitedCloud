@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by thoma on 10/05/2016.
  */
-public class GoogleDrive implements CloudServiceInterface {
+public class GoogleDrive extends CloudServiceInterface {
 
     private final boolean DEBUG = true;
     private final String CLIENT_ID = "758933709678-agp5qsi2lougn8vbe1to772cifpd50g6.apps.googleusercontent.com";

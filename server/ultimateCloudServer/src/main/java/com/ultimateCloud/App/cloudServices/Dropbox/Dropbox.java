@@ -21,26 +21,40 @@ import java.util.List;
 /**
  * Created by thoma on 10/05/2016.
  */
-public class Dropbox implements CloudServiceInterface {
-    private final boolean DEBUG =true;
+public class Dropbox extends CloudServiceInterface {
+    private final static boolean DEBUG =true;
     private WebTarget webTarget;
     public Dropbox(){
         ClientConfig config = new ClientConfig();
         Client client = ClientBuilder.newClient(config);
         if(DEBUG)
         client.register(new LoggingFilter());
-        webTarget = client.target(getBaseURI());
+        webTarget = client.target(baseUri);
 
 
 
 
     }
-    public String getBaseURI() {
-        return "https://api.dropboxapi.com/2/";
+   private static final String baseUri= "https://api.dropboxapi.com/2/";
+
+    public String getAuth(){
+
+        String response = webTarget.
+                path("https://www.dropbox.com/oauth2/authorize?").
+                request().
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).get().readEntity(String.class);
+        return response;
     }
 
-    public JsonObject getAuth(){
-        //TODO
+    public JsonObject getToken(tokenJson tokenJson){
+        String response = webTarget.
+                path("https://api.dropboxapi.com/oauth2/token").
+                request().
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(tokenJson)).readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
         return null;
     }
 
