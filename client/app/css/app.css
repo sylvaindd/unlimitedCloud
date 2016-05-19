@@ -1,0 +1,15 @@
+.elements{
+    margin-top:50px;
+    padding-right: 2%;
+}
+
+.element{
+    padding-top: 2%;
+    padding-left: 2%;
+    width: 10%;
+    float: left;
+}
+
+.element img{
+    width: 100%;
+}
