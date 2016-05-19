@@ -18,16 +18,18 @@ public class JDBCMysSQL {
     }
 
     Connection conn;
-    private JDBCMysSQL (){
+
+    private JDBCMysSQL() {
 
     }
+
     public static JDBCMysSQL getInstance() {
-        if(jdbcMysSQL==null || jdbcMysSQL.getConn()==null) {
+        if (jdbcMysSQL == null || jdbcMysSQL.getConn() == null) {
             jdbcMysSQL = new JDBCMysSQL();
             jdbcMysSQL.setConn(null);
 
             try {
-                jdbcMysSQL.setConn(DriverManager.getConnection("jdbc:mysql://lebonnuage.istic.univ-rennes1.fr/lebonnuage?" + "user=lebonnuage&password=lebonnuage123"+"&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"));
+                jdbcMysSQL.setConn(DriverManager.getConnection("jdbc:mysql://lebonnuage.istic.univ-rennes1.fr/lebonnuage?" + "user=lebonnuage&password=lebonnuage123" + "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"));
 
 
                 // Do something with the Connection
@@ -39,73 +41,27 @@ public class JDBCMysSQL {
             }
 
         }
-            return jdbcMysSQL;
+        return jdbcMysSQL;
 
     }
 
-    public void addDropBoxTokenToOurAccount(String token, String idDropBox, String tokenUltimateCloud) {
-        //TODO
+    public String getUserIdUltimateCloudFromToken(String tokenUltimateCloud) {
         Statement stmt = null;
         ResultSet rs = null;
 
+        String userIDUltimateCloud = "";
         try {
             stmt = conn.createStatement();
-            String req = "SELECT * FROM accounts WHERE idType=1 AND idUser=idUserUltimateCloud";
-            if (stmt.execute(req)) {
-                rs = stmt.getResultSet();
-            }
-             req = "INSERT INTO accounts (idType,idCloudService,idUser,tokenCloudService) " +
-                    "    VALUES (1, '" + idDropBox + "', 'u.id','" + token + "') LEFT JOIN User AS u ON u.tokenLeBonNuage='" + tokenUltimateCloud + "'" +
-                    "ON DUPLICATE KEY UPDATE (tokenCloudService='" + token + "');";
+            String req = "SELECT id FROM users WHERE tokenLeBonNuage='" + tokenUltimateCloud+"'";
             System.out.println(req);
             if (stmt.execute(req)) {
                 rs = stmt.getResultSet();
-            }
-
-            // Now do something with the ResultSet ....
-        } catch (Exception ex) {
-            // handle any errors
-            System.out.println("SQLException: " + ex.getMessage());
-        } finally {
-            // it is a good idea to release
-            // resources in a finally{} block
-            // in reverse-order of their creation
-            // if they are no-longer needed
-
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                rs = null;
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                stmt = null;
-            }
-        }
-    }
-
-    public void addDropBoxCodeToOurAccount(String code, String idDropBox, String tokenUltimateCloud) {
-        //TODO
-        Statement stmt = null;
-        ResultSet rs = null;
-
-        try {
-            stmt = conn.createStatement();
-            System.out.println(conn);
-            String req = "INSERT INTO Account (idType,idCloudService,idUser,codeCloudService) " +
-                    "    VALUES (1, '" + idDropBox + "', 'u.id','" + code + "') LEFT JOIN User AS u ON u.tokenLeBonNuage='" + tokenUltimateCloud + "'" +
-                    "ON DUPLICATE KEY UPDATE (codeCloudService='" + code + "');";
-            System.out.println(req);
-            if (stmt.execute(req)) {
-                rs = stmt.getResultSet();
+                while(rs.next())
+                {
+                    userIDUltimateCloud = rs.getString("id");
+                    System.out.println(rs.getString("id"));
+                    return userIDUltimateCloud;
+                }
             }
 
             // Now do something with the ResultSet ....
@@ -115,29 +71,128 @@ public class JDBCMysSQL {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            // it is a good idea to release
-            // resources in a finally{} block
-            // in reverse-order of their creation
-            // if they are no-longer needed
-
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                rs = null;
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                stmt = null;
-            }
+            endSQL(stmt, rs);
         }
+        return userIDUltimateCloud;
+    }
+
+    public void endSQL(Statement stmt, ResultSet rs) {
+        // it is a good idea to release
+        // resources in a finally{} block
+        // in reverse-order of their creation
+        // if they are no-longer needed
+
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException sqlEx) {
+            } // ignore
+
+            rs = null;
+        }
+
+        if (stmt != null) {
+            try {
+                stmt.close();
+            } catch (SQLException sqlEx) {
+            } // ignore
+
+            stmt = null;
+        }
+    }
+
+    public void addDropBoxTokenToOurAccount(String token, String idDropBox, String tokenUltimateCloud) {
+        Statement stmt = null;
+        ResultSet rs = null;
+        String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
+        String req="";
+
+        try {
+            stmt = conn.createStatement();
+            req = "SELECT * FROM accounts WHERE idType=1 AND idCloudService=" + idDropBox + " AND idUser=" + idUserUltimateCloud + " AND tokenCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
+            if (stmt.execute(req)) {
+                rs = stmt.getResultSet();
+                int size = 0;
+                if (rs != null) {
+                    rs.beforeFirst();
+                    rs.last();
+                    size = rs.getRow();
+                }
+
+                if (size == 0) {
+                    //insert
+                    req = "INSERT INTO accounts (idType,idCloudService,idUser,tokenCloudService,codeCloudService) " +
+                            "    VALUES (1, '" + idDropBox + "', '" + idUserUltimateCloud + "','" + token + "','-1');";
+                    if (stmt.execute(req)) {
+                        rs = stmt.getResultSet();
+                    }
+                } else {
+                    //update
+                    req = "UPDATE accounts set tokenCloudService='" + token + "' where idCloudService ='" + idDropBox + "' AND idType=1;";
+                    if (stmt.execute(req)) {
+                        rs = stmt.getResultSet();
+                    }
+                }
+            }
+
+
+
+
+            // Now do something with the ResultSet ....
+        } catch (Exception ex) {
+            // handle any errors
+            System.out.println(req);
+            System.out.println("SQLException: " + ex.getMessage());
+        } finally {
+            endSQL(stmt, rs);
+        }
+    }
+
+    public void addDropBoxCodeToOurAccount(String code, String idDropBox, String tokenUltimateCloud) {
+        //TODO
+        Statement stmt = null;
+        ResultSet rs = null;
+        String req="";
+        String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
+        try {
+            stmt = conn.createStatement();
+             req = "SELECT * FROM accounts WHERE idType=1 AND idCloudService=" + idDropBox + " AND idUser=" + idUserUltimateCloud + " AND codeCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
+            if (stmt.execute(req)) {
+                rs = stmt.getResultSet();
+                int size = 0;
+                if (rs != null) {
+                    rs.beforeFirst();
+                    rs.last();
+                    size = rs.getRow();
+                }
+
+                if (size == 0) {
+                    //insert
+                    req = "INSERT INTO accounts (idType,idCloudService,idUser,codeCloudService,tokenCloudService) " +
+                            "    VALUES (1, '" + idDropBox + "', '" + idUserUltimateCloud + "','" + code + "','-1');";
+                    if (stmt.execute(req)) {
+                        rs = stmt.getResultSet();
+                    }
+                } else {
+                    //update
+                    req = "UPDATE accounts set codeCloudService='" + code + "' where idCloudService ='" + idDropBox + "' AND idType=1;";
+                    if (stmt.execute(req)) {
+                        rs = stmt.getResultSet();
+                    }
+                }
+            }
+
+
+            // Now do something with the ResultSet ....
+        } catch (Exception ex) {
+            // handle any errors
+            System.out.println(req);
+            System.out.println("SQLException: " + ex.getMessage()+ex.getLocalizedMessage());
+
+        } finally {
+            endSQL(stmt, rs);
+        }
+
     }
 
     public void getDropBoxAccountList() {
@@ -162,28 +217,7 @@ public class JDBCMysSQL {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            // it is a good idea to release
-            // resources in a finally{} block
-            // in reverse-order of their creation
-            // if they are no-longer needed
-
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                rs = null;
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-
-                stmt = null;
-            }
+            endSQL(stmt, rs);
         }
     }
 }

@@ -68,6 +68,7 @@ public class Dropbox extends CloudServiceInterface {
         System.out.println("user_dropbox_id:"+user_dropbox_id+"token :"+token);
         //store token in bdd
         JDBCMysSQL.getInstance().addDropBoxTokenToOurAccount(token,user_dropbox_id,tokenUltimateCloud);
+        getFileList(new listFileJson(),token);
         return response ;
     }
 
@@ -90,11 +91,11 @@ public class Dropbox extends CloudServiceInterface {
         return null;
     }
 
-    public List<FileCloud> getFileList(listFileJson listFileJson){
+    public List<FileCloud> getFileList(listFileJson listFileJson, String token){
         String response = webTargetMain.
                 path("files/list_folder").
                 request().
-                header(HttpHeaders.AUTHORIZATION,"Bearer GBre0x3PlHAAAAAAAAAACWPyyJYxh2ljcf3dttoT5tUKfLwv8slxe0payqYYswjL").
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+token).
                 header(HttpHeaders.CONTENT_TYPE,"application/json").
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
