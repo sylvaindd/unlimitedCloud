@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import {SocialConnection} from "./SocialConnection";
 
 @Component({
     selector: "connection",
-    templateUrl: "app/html/connection.html",
-    directives:[SocialConnection]
+    templateUrl: "app/html/connection.html"
 })
 export class Connection {
 
