@@ -18,7 +18,7 @@ public class Callbackdropboxtoken extends HttpServlet {
 
     {
         resp.setStatus(HttpStatus.OK_200);
-
+System.out.println("lol");
         String ourToken = req.getParameter("state");
         //store token in BDDs
 
