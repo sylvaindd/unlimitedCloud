@@ -10,4 +10,14 @@ export class Settings {
     constructor() {
         
     }
+
+    onAddGoogleAccount()
+    {
+
+    }
+
+    onAddDropboxAccount()
+    {
+
+    }
 }
