@@ -6,6 +6,7 @@ import com.ultimateCloud.App.models.FileCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 
+import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -21,7 +22,10 @@ import java.util.List;
 public class GoogleDrive implements CloudServiceInterface {
 
     private final boolean DEBUG = true;
+    private final String CLIENT_ID = "758933709678-agp5qsi2lougn8vbe1to772cifpd50g6.apps.googleusercontent.com";
+    private final String REDIRECT = "http://localhost:8080/lebonnuage/drive";
     private WebTarget webTarget;
+
 
     public GoogleDrive() {
         ClientConfig config = new ClientConfig();
@@ -48,8 +52,28 @@ public class GoogleDrive implements CloudServiceInterface {
         return result;
     }
 
-    public String getAuth(){
+    public JsonObject getAuth(){
+        // TODO
+        //"https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/drive&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT;
+        return null;
+    }
+
+    public JsonObject getFileInformations(String path){
         //TODO
-        return "";
+        return null;
+    }
+
+    public JsonObject mkdir(String folder){
+        //TODO
+        return null;
+    }
+    public JsonObject rmdir(String folder){
+        //TODO
+        return null;
+    }
+
+    public JsonObject rm(String file){
+        //TODO
+        return null;
     }
 }

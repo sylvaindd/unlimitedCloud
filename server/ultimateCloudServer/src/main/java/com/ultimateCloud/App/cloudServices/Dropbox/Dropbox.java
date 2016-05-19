@@ -5,6 +5,7 @@ import com.ultimateCloud.App.models.FileCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 
+import javax.json.JsonObject;
 import javax.ws.rs.Path;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -38,18 +39,37 @@ public class Dropbox implements CloudServiceInterface {
         return "https://api.dropboxapi.com/2/";
     }
 
-    public String getAuth(){
+    public JsonObject getAuth(){
         //TODO
-        return "";
+        return null;
     }
 
-    public List<FileCloud> getFileList(){
+    public JsonObject getFileInformations(String path){
+        //TODO
+        return null;
+    }
+
+    public JsonObject mkdir(String folder){
+        //TODO
+        return null;
+    }
+    public JsonObject rmdir(String folder){
+        //TODO
+        return null;
+    }
+
+    public JsonObject rm(String file){
+        //TODO
+        return null;
+    }
+
+    public List<FileCloud> getFileList(listFileJson listFileJson){
         String response = webTarget.
                 path("files/list_folder").
                 request().
                 header(HttpHeaders.AUTHORIZATION,"Bearer GBre0x3PlHAAAAAAAAAACWPyyJYxh2ljcf3dttoT5tUKfLwv8slxe0payqYYswjL").
                 header(HttpHeaders.CONTENT_TYPE,"application/json").
-                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(new listFileJson())).readEntity(String.class);
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
         return null;
