@@ -1,16 +1,9 @@
 import {Component} from '@angular/core';
-import {Explorer} from "./Explorer";
-import {Routes , Router} from '@angular/router';
 
 @Component({
     selector: "connection",
     templateUrl: "app/html/connection.html"
-    // providers: [Router]
 })
-
-// @Routes([
-//     {path: '/Explorer', component: Explorer},
-// ])
 
 export class Connection {
 

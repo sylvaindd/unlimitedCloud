@@ -1,36 +1,32 @@
 import {Component} from '@angular/core';
-import {Explorer} from "./Explorer";
 import {Tabs} from "./Tabs";
 import {Tab} from "./Tab";
 import {Connection} from "./Connection";
+import {App} from "./App";
 import {Register} from "./Register";
-import {Routes , Router} from '@angular/router';
+import { Router, ROUTER_DIRECTIVES, Routes } from '@angular/router';
 
 @Component({
     selector: "firstPage",
     templateUrl: "app/html/firstPage.html",
-    directives: [Tabs, Tab, Connection, Register],
-    // providers: [Router]
+    directives: [Tabs, Tab, Connection, Register, ROUTER_DIRECTIVES]
 })
 
-// @Routes([
-//     {path: '/Explorer', component: Explorer},
-// ])
+@Routes([
+    {path: '/App', component: App}
+])
 
 export class FirstPage {
 
     mdp:String;
     adresse:String;
 
-    constructor() {
+    constructor(private router: Router) {
         this.adresse = "";
         this.mdp = "";
     }
 
-    // onSubmit() {
-    //     if (this.adresse != "" && this.adresse.indexOf("@") > -1 && this.mdp != "") {
-    //         console.log("Submit ! " + this.adresse + " - " + this.mdp);
-    //         this.router.navigate(['/Explorer']);
-    //     }
-    // }
+    onSubmit() {
+        this.router.navigate(['/App']);
+    }
 }
