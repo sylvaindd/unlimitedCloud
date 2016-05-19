@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Fichier} from "./models/Fichier";
 
 @Component({
     selector: "fichierComponent",
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FichierComponent {
 
+    @Input() fichier:Fichier;
+    
     constructor(){
         
     }

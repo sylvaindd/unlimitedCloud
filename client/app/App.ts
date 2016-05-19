@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import {Connection} from "./Connection";
+import {Drawer} from "./Drawer";
+import {Explorer} from "./Explorer";
 
 @Component({
     selector: "app",
     templateUrl: "app/html/app.html",
-    directives:[Connection]
+    directives:[Drawer, Explorer]
 })
+
+
 export class App {
 
     private ws:WebSocket;
