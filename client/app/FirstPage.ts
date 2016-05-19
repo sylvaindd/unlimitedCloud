@@ -3,6 +3,8 @@ import {Tabs} from "./Tabs";
 import {Tab} from "./Tab";
 import {Connection} from "./Connection";
 import {Register} from "./Register";
+import {MainPage} from "./MainPage";
+
 
 @Component({
     selector: "firstPage",
@@ -12,15 +14,7 @@ import {Register} from "./Register";
 
 export class FirstPage {
 
-    mdp:String;
-    adresse:String;
-
     constructor() {
-        this.adresse = "";
-        this.mdp = "";
     }
 
-    onSubmit() {
-        this.router.navigate(['/App']);
-    }
 }

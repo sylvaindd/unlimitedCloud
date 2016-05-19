@@ -6,8 +6,7 @@ import {FirstPage} from "./FirstPage";
 @Component({
     selector: "mainPage",
     template: `
-<button (click)="onSubmit()">Test</button>
-<router-outlet></router-outlet>`,
+        <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
 
@@ -23,7 +22,4 @@ export class MainPage {
     constructor(private router: Router) {
     }
 
-    onSubmit() {
-        this.router.navigate(['/App']);
-    }
 }

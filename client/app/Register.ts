@@ -1,13 +1,14 @@
 import {Component} from '@angular/core';
 /// <reference path="typings/jquery/jquery.d.ts" />
 import {Validation} from "./utils/Utils";
-
-
+import {APIService} from "./services/APIService";
+import {Router} from '@angular/router';
 declare var jQuery: JQueryStatic;
 
 @Component({
     selector: "register",
-    templateUrl: "app/html/register.html"
+    templateUrl: "app/html/register.html",
+    providers: [APIService],
 })
 export class Register {
 
@@ -16,7 +17,7 @@ export class Register {
     password:String;
     repassword:String;
 
-    constructor() {
+    constructor(private apiService:APIService, private router:Router) {
         this.mail = "";
         this.username = "";
         this.password = "";
@@ -32,22 +33,21 @@ export class Register {
             valid = false;
             Validation.errorInput("mail");
         }
-        if (this.username.length > 6) {
+        if (this.username.length >= 6) {
             Validation.noErrorInput("username")
         } else {
             valid = false;
             Validation.errorInput("username");
         }
 
-        console.log("Mon if : " +(this.password.length > 6 && this.password == this.repassword));
-        if (this.password.length > 6 && this.password == this.repassword) {
+        if (this.password.length >= 6 && this.password == this.repassword) {
             Validation.noErrorInput("ppassword")
         } else {
             valid = false;
             Validation.errorInput("ppassword");
         }
 
-        if (this.repassword.length > 6 && this.password == this.repassword) {
+        if (this.repassword.length >= 6 && this.password == this.repassword) {
             Validation.noErrorInput("repassword")
         } else {
             valid = false;
@@ -56,5 +56,7 @@ export class Register {
 
         if(!valid)
             return;
+
+        this.apiService.register(this.username, this.mail, this.password);
     }
 }

@@ -9,7 +9,6 @@ export class APIService {
 
     }
 
-
     authenticate(username, password) {
         var body = "username=" + username + "&password=" + password;
         var headers = new Headers();
@@ -25,17 +24,42 @@ export class APIService {
             .map(response => response.json())
             .subscribe(
                 response => {
-                    console.log(data);
                     data = response;
+                    console.log(data);
                 },
                 err => error = err.json().message,
                 () => console.log('Authentication Complete')
             );
     }
 
-    getPokemon(id:number) {
-        return this.http.get('http://pokeapi.co/api/v2/pokemon/' + id + '/')
-            .toPromise()
-            .then((response) => response.json());
+    register(username, mail, password) {
+
+        var body = {username : username, mail : mail, password : password};
+
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        let result, error, data;
+
+        return this.http
+            .post('http://localhost:8080/lebonnuage/register',
+                JSON.stringify(body), {
+                    headers: headers
+                })
+            .map(response => response.json())
+            .subscribe(
+                response => {
+                    data = response;
+                    console.log(data);
+                },
+                err => error = err.json().message,
+                () => console.log('Authentication Complete')
+            );
     }
+
+    // getPokemon(id:number) {
+    //     return this.http.get('http://pokeapi.co/api/v2/pokemon/' + id + '/')
+    //         .toPromise()
+    //         .then((response) => response.json());
+    // }
 }
