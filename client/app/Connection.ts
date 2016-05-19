@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 import {Explorer} from "./Explorer";
-import {Routes , Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Routes , Router} from '@angular/router';
 
 @Component({
     selector: "connection",
-    templateUrl: "app/html/connection.html",
-    directives: [ROUTER_DIRECTIVES]
+    templateUrl: "app/html/connection.html"
 })
 
 @Routes([
