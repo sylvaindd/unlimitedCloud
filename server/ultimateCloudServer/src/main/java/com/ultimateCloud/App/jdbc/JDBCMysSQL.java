@@ -13,8 +13,8 @@ public class JDBCMysSQL {
 
         try {
             conn =
-                    DriverManager.getConnection("jdbc:mysql://localhost/test?" +
-                            "user=minty&password=greatsqldb");
+                    DriverManager.getConnection("jdbc:mysql://lebonnuage.istic.univ-rennes1.fr/?" +
+                            "user=root&password=jxsjxw2016");
 
             // Do something with the Connection
 
