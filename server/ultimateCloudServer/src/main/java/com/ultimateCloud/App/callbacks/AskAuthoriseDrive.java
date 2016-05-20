@@ -1,5 +1,6 @@
 package com.ultimateCloud.App.callbacks;
 
+import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
 import com.ultimateCloud.App.cloudServices.GoogleDrive.GoogleDrive;
 import org.eclipse.jetty.http.HttpStatus;
 
@@ -12,19 +13,21 @@ import java.io.IOException;
 /**
  * Created by steven on 19/05/2016.
  */
-public class CallbackDriveauthorise extends HttpServlet {
+public class AskAuthoriseDrive extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
 
     {
         resp.setStatus(HttpStatus.OK_200);
-        System.out.println("callback google");
-        String ourToken = req.getParameter("state");
-        String code = req.getParameter("code");
-        //store code in BDD
-        //TODO
-        //and asktoken
+
         GoogleDrive drive = new GoogleDrive();
+        System.out.println("reponseaskauthorise"+drive.getAuth());
+        String rst = drive.getAuth();
+        rst.replace("<form action=\"/","<form action=\"https://www.dropbox.com/oauth2/authorize/");
+        resp.getWriter().write(drive.getAuth());
+        resp.getWriter().flush();
+        resp.getWriter().close();
+
     }
 }
