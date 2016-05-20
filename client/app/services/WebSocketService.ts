@@ -1,5 +1,5 @@
 import {ContextContainer} from "../utils/ContextContainer";
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class WebSocketService {
@@ -13,12 +13,12 @@ export class WebSocketService {
 
     }
 
-    init(){
+    init() {
         this.ws = new WebSocket("ws://localhost:8080/lebonnuage/socket");
 
         this.ws.onopen = function () {
             console.log('SOCKET : Connection open!');
-            let json  = {token : this.contextContainer.token};
+            let json = {token: this.contextContainer.token};
             this.ws.send(JSON.stringify(json));
         }.bind(this);
 
@@ -35,7 +35,7 @@ export class WebSocketService {
             console.log("SOCKET : " + server_message);
 
 
-            switch(e.data.function){
+            switch (e.data.function) {
                 case "dropboxAdded":
                     this.callBackDropboxAdded(e.data.data);
                     break;
@@ -47,12 +47,12 @@ export class WebSocketService {
         }
     }
 
-    askForFiles(){
-        let json = {function: "getFilesFolders", path : ""};
+    askForFiles() {
+        let json = {function: "getFilesFolders", path: ""};
         this.sendJson(json);
     }
 
-    sendJson(json){
+    sendJson(json) {
         this.ws.send(JSON.stringify(json));
     }
 }
