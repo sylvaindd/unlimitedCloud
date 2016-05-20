@@ -1,14 +1,16 @@
 <ul class="nav navbar-nav">
-    <li class="navBarElement">
-        <input id="input-1" type="file" class="file">
+    <li>
+        <p class="navbar-btn navBarElement">
+            <input id="input-1" type="file" class="file">
+        </p>
     </li>
-    <li class="navBarElement">
-        <p class="navbar-btn">
+    <li>
+        <p class="navbar-btn navBarElement">
             <a (click)="upload()" class="btn btn-default">Valider</a>
         </p>
     </li>
-    <li class="navBarElement">
-        <p class="navbar-btn">
+    <li>
+        <p class="navbar-btn navBarElement">
             <a [routerLink]="['/App/Explorer']" class="btn btn-default">Annuler</a>
         </p>
     </li>

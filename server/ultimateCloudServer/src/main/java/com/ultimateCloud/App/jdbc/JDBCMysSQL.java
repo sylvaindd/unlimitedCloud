@@ -218,7 +218,7 @@ public class JDBCMysSQL {
         }
     }
 
-    public void addGoogleDriveCodeToOurAccount(String code, String idGoogleDrive, String tokenUltimateCloud) {
+    public void addGoogleDriveCodeToOurAccount(String code, String tokenUltimateCloud) {
         // TODO
         Statement stmt = null;
         ResultSet rs = null;
@@ -226,7 +226,7 @@ public class JDBCMysSQL {
         String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
         try {
             stmt = conn.createStatement();
-            req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + idGoogleDrive + " AND idUser=" + idUserUltimateCloud
+            req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + tokenUltimateCloud + " AND idUser=" + idUserUltimateCloud
                     + " AND codeCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
             if (stmt.execute(req)) {
                 rs = stmt.getResultSet();
@@ -239,14 +239,14 @@ public class JDBCMysSQL {
 
                 if (size == 0) {
                     // insert
-                    req = "INSERT INTO accounts (idType,idCloudService,idUser,codeCloudService,tokenCloudService) " + "    VALUES (2, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + code
+                    req = "INSERT INTO accounts (idType,idCloudService,idUser,codeCloudService,tokenCloudService) " + "    VALUES (2, '" + tokenUltimateCloud + "', '" + idUserUltimateCloud + "','" + code
                             + "','-1');";
                     if (stmt.execute(req)) {
                         rs = stmt.getResultSet();
                     }
                 } else {
                     // update
-                    req = "UPDATE accounts set codeCloudService='" + code + "' where idCloudService ='" + idGoogleDrive + "' AND idType=2;";
+                    req = "UPDATE accounts set codeCloudService='" + code + "' where idCloudService ='" + tokenUltimateCloud + "' AND idType=2;";
                     if (stmt.execute(req)) {
                         rs = stmt.getResultSet();
                     }
@@ -271,7 +271,7 @@ public class JDBCMysSQL {
 
         try {
             stmt = conn.createStatement();
-            req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + idGoogleDrive + " AND idUser=" + idUserUltimateCloud
+            req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService='" + idGoogleDrive + "' AND idUser=" + idUserUltimateCloud
                     + " AND tokenCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
             if (stmt.execute(req)) {
                 rs = stmt.getResultSet();
@@ -284,7 +284,8 @@ public class JDBCMysSQL {
 
                 if (size == 0) {
                     // insert
-                    req = "INSERT INTO accounts (idType,idCloudService,idUser,tokenCloudService,codeCloudService) " + "    VALUES (2, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + token
+                    req = "INSERT INTO accounts (idType,idCloudService,idUser,tokenCloudService,codeCloudService) "
+                            + "    VALUES (2, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + token
                             + "','-1');";
                     if (stmt.execute(req)) {
                         rs = stmt.getResultSet();

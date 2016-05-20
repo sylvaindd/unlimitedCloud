@@ -1,7 +1,3 @@
-body {
-    padding-top: 90px;
-}
-
 .connectionError {
     color: red;
     display: none;

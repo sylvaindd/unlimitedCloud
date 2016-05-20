@@ -27,7 +27,7 @@ public class CallbackDrive extends HttpServlet {
         if(code !=null && code!=""){
             //onrécupère le code
             //store code in BDD
-            JDBCMysSQL.getInstance().addGoogleDriveCodeToOurAccount(code,user_id,ourToken);
+            JDBCMysSQL.getInstance().addGoogleDriveCodeToOurAccount(code, ourToken);
             //and asktoken
             System.out.println("code"+code);
             GoogleDrive googledrive = new GoogleDrive();

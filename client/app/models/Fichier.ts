@@ -4,8 +4,9 @@ export class Fichier {
     private dateModif:Date;
     private taille:number;
 
-    constructor(name:String) {
+    constructor(name:String, taille:number) {
         this.name = name;
+        this.taille = taille;
     }
 
 }

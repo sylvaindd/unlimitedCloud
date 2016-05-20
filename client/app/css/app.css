@@ -1,3 +1,7 @@
+body {
+    padding-top: 90px;
+}
+
 .toolbarkit{
     margin-top: 50px;
 }
@@ -21,6 +25,7 @@
 .settingContent{
     padding: 2%;
 }
+
 .navBarElement{
     padding: 2%;
 }

@@ -1,27 +1,27 @@
 <ul class="nav navbar-nav">
     <li>
         <p class="navbar-btn navBarElement">
-            <a class="btn btn-default">back</a>
+            <span>Nom : </span>
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <a [routerLink]="['/App/Explorer/Upload']" class="btn btn-default">Upload</a>
+            <span>{{dossier.name}}</span>
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <a class="btn btn-default">Download</a>
+            <span>Taille : </span>
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <input type="text" name="nom du dossier">
+            <span>{{dossier.taille}}</span>
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <a class="btn btn-default">Créer le dossier</a>
+            <a [routerLink]="['/App/Explorer']" class="btn btn-default">Annuler</a>
         </p>
     </li>
 </ul>
