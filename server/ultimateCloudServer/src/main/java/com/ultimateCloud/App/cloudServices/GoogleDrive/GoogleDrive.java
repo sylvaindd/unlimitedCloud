@@ -128,4 +128,20 @@ public class GoogleDrive extends CloudServiceInterface {
             System.out.println(response);
         return new JSONObject(response);
     }
+
+    public JSONObject rename(String id, String newName, String tokenGoogleDrive) {
+        // HTTP PATCH TODO
+        Map<String, String> param = new HashMap<String, String>();
+        param.put("fields", "title");
+
+        String response = webTargetMain.
+                path("files/" + id).
+                request().
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenGoogleDrive).
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
+        return new JSONObject(response);
+    }
 }
