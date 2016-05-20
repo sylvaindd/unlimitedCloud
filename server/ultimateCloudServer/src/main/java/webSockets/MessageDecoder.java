@@ -4,6 +4,8 @@ package webSockets;
  * Created by thoma on 12/05/2016.
  */
 
+import org.json.JSONObject;
+
 import java.io.StringReader;
 import javax.json.Json;
 import javax.json.JsonException;
@@ -21,7 +23,7 @@ public class MessageDecoder implements Decoder.Text<Message>{
      */
 
     public Message decode(String string) throws DecodeException {
-        JsonObject json = Json.createReader(new StringReader(string)).readObject();
+        JSONObject json = new JSONObject(string);
         return new Message(json);
     }
 

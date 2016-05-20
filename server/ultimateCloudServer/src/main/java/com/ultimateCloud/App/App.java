@@ -42,11 +42,11 @@ public class App
         handlerAskAuthorise.addServlet(AskAuthorise.class, "/");
 
         ServletContextHandler handlerCallbackGoogleDriveauthorise = new ServletContextHandler(server, "/lebonnuage/callbackDriveauthorise");
-        handlerCallbackdropboxauthorise.addServlet(Callbackdropbox.class, "/");
+        handlerCallbackGoogleDriveauthorise.addServlet(Callbackdropbox.class, "/");
 
 
         ServletContextHandler handlerAskDriveAuthorise = new ServletContextHandler(server, "/lebonnuage/askDriveauthorise");
-        handlerAskAuthorise.addServlet(AskAuthoriseDrive.class, "/");
+        handlerAskDriveAuthorise.addServlet(AskAuthoriseDrive.class, "/");
 
         HandlerCollection collection = new HandlerCollection();
         // Dropbox services

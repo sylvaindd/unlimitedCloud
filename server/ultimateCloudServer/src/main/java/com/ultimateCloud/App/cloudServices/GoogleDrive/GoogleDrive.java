@@ -80,7 +80,6 @@ public class GoogleDrive extends CloudServiceInterface {
         System.out.println("user_googledrive_id:"+user_googledrive_id+"token :"+token);
         //store token in bdd
         JDBCMysSQL.getInstance().addGoogleDriveTokenToOurAccount(token,user_googledrive_id,tokenUltimateCloud);
-        getFileList(new listFileJson(),token);
         return response ;
     }
 

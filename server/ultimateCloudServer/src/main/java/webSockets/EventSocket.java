@@ -21,18 +21,7 @@ public class EventSocket extends WebSocketAdapter {
     public void onWebSocketText(String message) {
         super.onWebSocketText(message);
         System.out.println("Received TEXT message: " + message);
-        JSONObject jsonObj = new JSONObject(message);
-        String function = jsonObj.getString("function");
-        String token = jsonObj.getString("token");
-        Dropbox dropbox = new Dropbox();
-        if (function.equals("getFileList")) {
-            dropbox.getFileList(new listFileJson(),token);
-        } else if (function.equals("download")) {
 
-        } else if (function.equals("upload")) {
-
-
-        }
     }
 
     @Override
