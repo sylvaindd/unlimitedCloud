@@ -8,17 +8,21 @@ import com.googlecode.concurrenttrees.radix.node.util.PrettyPrintable;
 import com.ultimateCloud.App.models.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import utils.ConcurrentRadixTreeInMemoryFileSystem;
+import utils.InMemoryFileSystem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by thoma on 20/05/2016.
  */
 public class FileSystemParser {
-    public static RadixTree<FileSystem>  parse(String json){
-        RadixTree<FileSystem> tree = new ConcurrentRadixTree<FileSystem>(new DefaultCharArrayNodeFactory());
+    public static  List<FileSystem> parse(String json){
+       List<FileSystem> fileInFolder= new ArrayList<>();
         JSONObject jsonObj = new JSONObject(json);
        JSONArray fileFolderList= jsonObj.getJSONArray("entries");
+
         for (int i = 0; i < fileFolderList.length(); ++i) {
             JSONObject entrie = fileFolderList.getJSONObject(i);
             FileSystem fileSystem=null;
@@ -34,9 +38,9 @@ public class FileSystemParser {
                 String size = String.valueOf(entrie.getBigInteger("size"));
                 fileSystem = new FileCloud(id,name,dateDeModification,size);
             }
-            tree.put(path, fileSystem);
+            fileInFolder.add(fileSystem);
         }
-        PrettyPrinter.prettyPrint((PrettyPrintable) tree, System.out);
-        return tree;
+
+        return fileInFolder;
     }
 }

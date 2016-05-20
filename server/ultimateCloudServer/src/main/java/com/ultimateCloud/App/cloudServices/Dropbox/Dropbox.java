@@ -1,13 +1,20 @@
 package com.ultimateCloud.App.cloudServices.Dropbox;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.googlecode.concurrenttrees.radix.RadixTree;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.ultimateCloud.App.interfaces.CloudServiceInterface;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.jsonParser.FileSystemParser;
 import com.ultimateCloud.App.models.FileCloud;
+import com.ultimateCloud.App.models.FileSystem;
+import com.ultimateCloud.App.models.FolderCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
+import org.json.JSONArray;
 import org.json.JSONObject;
+import utils.InMemoryFileSystem;
 
 import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
@@ -69,7 +76,35 @@ public class Dropbox extends CloudServiceInterface {
         System.out.println("user_dropbox_id:"+user_dropbox_id+"token :"+token);
         //store token in bdd
         JDBCMysSQL.getInstance().addDropBoxTokenToOurAccount(token,user_dropbox_id,tokenUltimateCloud);
-        getFileList(new listFileJson(),token);
+        JSONObject jsonReturn = new JSONObject();
+
+        for (FileSystem fileSystem : getFileList(new listFileJson(), token)) {
+            JSONArray actualArray = new JSONArray();
+            if(fileSystem instanceof FileCloud)   {
+                ObjectMapper mapper = new ObjectMapper();
+                //Object to JSON in String
+                String jsonInString = null;
+                try {
+                    jsonInString = mapper.writeValueAsString(fileSystem);
+                } catch (JsonProcessingException e) {
+                    e.printStackTrace();
+                }
+                jsonReturn.append("file",new JSONObject(jsonInString));
+            }
+
+            else if(fileSystem instanceof FolderCloud){
+                ObjectMapper mapper = new ObjectMapper();
+                //Object to JSON in String
+                String jsonInString = null;
+                try {
+                    jsonInString = mapper.writeValueAsString(fileSystem);
+                } catch (JsonProcessingException e) {
+                    e.printStackTrace();
+                }
+                jsonReturn.append("folder",new JSONObject(jsonInString));
+            }
+        }
+        System.out.println(jsonReturn.toString());
         return response ;
     }
 
@@ -92,7 +127,7 @@ public class Dropbox extends CloudServiceInterface {
         return null;
     }
 
-    public List<FileCloud> getFileList(listFileJson listFileJson, String token){
+    public List<FileSystem> getFileList(listFileJson listFileJson, String token){
         String response = webTargetMain.
                 path("files/list_folder").
                 request().
@@ -101,8 +136,8 @@ public class Dropbox extends CloudServiceInterface {
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-        FileSystemParser.parse(response);
-        return null;
+      return FileSystemParser.parse(response);
+
     }
 
 }
