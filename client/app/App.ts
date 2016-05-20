@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Explorer} from "./Explorer";
 import {Settings} from "./Settings";
+import {ContextContainer} from "./utils/ContextContainer";
 import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
 
 @Component({
@@ -19,7 +20,7 @@ import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
 export class App {
 
     private ws:WebSocket;
-    constructor(private router: Router){
+    constructor(private router: Router, private contextContainer: ContextContainer){
         this.ws = new WebSocket("ws://127.0.0.1:8080/REST/");
 
         this.ws.onopen = function(){
@@ -38,6 +39,8 @@ export class App {
             var server_message = e.data;
             console.log(server_message);
         }
+
+        console.log("Token : " + this.contextContainer.token);
     }
 
     ngOnInit() {

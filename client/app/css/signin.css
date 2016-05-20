@@ -2,6 +2,12 @@ body {
     padding-top: 90px;
 }
 
+.connectionError {
+    color: red;
+    display: none;
+    text-align: center;
+}
+
 .panel-login .form-control-feedback {
     width: 45px;
     height: 45px;
