@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="">
+    <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="changment url token">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml" />
     </list>
     <list id="0000f9e0-c132-44bf-b76c-530166596006" name="New changelist" comment="" />
     <ignored path="unlimitedCloud.iws" />
@@ -34,11 +35,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GoogleDrive.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GoogleDrive.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+            <state relative-caret-position="218">
+              <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDBCMysSQL.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="224" column="24" selection-start-line="224" selection-start-column="24" selection-end-line="224" selection-end-column="24" />
+              <folding>
+                <marker date="1463748115008" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
+                <marker date="1463748115008" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
+                <marker date="1463748115008" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
+                <marker date="1463748115008" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
+                <marker date="1463748115008" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
+                <marker date="1463748115008" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
+                <marker date="1463748115008" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
+                <marker date="1463748115008" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
+                <marker date="1463748115008" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
+                <marker date="1463748115008" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
+                <marker date="1463748115008" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
+                <marker date="1463748115008" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
+                <marker date="1463748115008" expanded="true" signature="10474:10685" ph="INSERT INTO accounts... " />
+                <marker date="1463748115008" expanded="true" signature="10888:11000" ph="UPDATE accou... " />
+                <marker date="1463748115008" expanded="true" signature="11666:11723" ph="SELECT * FRO... users" />
+                <marker date="1463748115008" expanded="true" signature="12438:12457" ph="SELECT foo F... bar" />
+                <marker date="1463748115008" expanded="true" signature="12608:12627" ph="SELECT foo F... bar" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AskAuthorise.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthorise.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -57,8 +96,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="310">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -506,8 +545,32 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/Explorer.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/Settings.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/css/app.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/css/signin.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/explorer.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/toolbarExplorer.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/upload.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/main.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthorise.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/Callbackdropbox.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/listFileJson.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/interfaces/CloudServiceInterface.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jsonParser/FileSystemParser.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/models/User.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/EventClient.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/EventSocket.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/Message.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/MessageDecoder.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/MessageTraitement.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/WebSocketLeBonNuage.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -515,6 +578,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/ContextMenuHolderComponent.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/ToolbarDetails.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/toolbarDetails.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/models/Actions.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/services/ContextMenuService.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/ConcurrentRadixTreeInMemoryFileSystem.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/InMemoryFileSystem.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/InMemoryFileSystemUsage.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/WebSocketUtils.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1080,7 +1152,7 @@
       <workItem from="1463733259574" duration="179000" />
       <workItem from="1463733689640" duration="58000" />
       <workItem from="1463733862121" duration="2725000" />
-      <workItem from="1463740550499" duration="1989000" />
+      <workItem from="1463740550499" duration="3726000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -1201,11 +1273,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463741865700</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="changment url token">
+      <created>1463742552495</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1463742552495</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47213000" />
+    <option name="totallyTimeSpent" value="48950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1219,6 +1298,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25449872" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3526245" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2718708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1230,15 +1310,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2718708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1296,7 +1375,8 @@
     <MESSAGE value="Correction d'une requête google drive, gestion des callback drive" />
     <MESSAGE value="rename callback drive" />
     <MESSAGE value="intégration des callback dans l'app" />
-    <option name="LAST_COMMIT_MESSAGE" value="intégration des callback dans l'app" />
+    <MESSAGE value="changment url token" />
+    <option name="LAST_COMMIT_MESSAGE" value="changment url token" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1558,61 +1638,23 @@
         <state relative-caret-position="565">
           <caret line="223" column="4" selection-start-line="223" selection-start-column="4" selection-end-line="223" selection-end-column="4" />
           <folding>
-            <marker date="1463741691230" expanded="true" signature="1358:1427" ph="SELECT id FR... users" />
-            <marker date="1463741691230" expanded="true" signature="3169:3348" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="3711:3918" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="4120:4228" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="5044:5222" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="5585:5672" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5585:5676" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5585:5791" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5993:6099" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="6960:7142" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="7549:7763" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="7989:8098" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="7989:8099" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="8988:9171" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="9578:9793" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="10019:10130" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="10019:10131" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="10831:10850" ph="SELECT foo F... bar" />
-            <marker date="1463741691230" expanded="true" signature="11001:11020" ph="SELECT foo F... bar" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthorise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="0" selection-start-line="15" selection-start-column="3" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="226" column="18" selection-start-line="226" selection-start-column="18" selection-end-line="226" selection-end-column="18" />
-          <folding>
-            <marker date="1463741691230" expanded="true" signature="1358:1427" ph="SELECT id FR... users" />
-            <marker date="1463741691230" expanded="true" signature="3169:3348" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="3711:3918" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="4120:4228" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="5044:5222" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="5585:5672" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5585:5676" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5585:5791" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="5993:6099" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="6960:7142" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="7549:7763" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="7989:8098" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="7989:8099" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="8988:9171" ph="SELECT * FRO... accounts" />
-            <marker date="1463741691230" expanded="true" signature="9578:9793" ph="INSERT INTO accounts... " />
-            <marker date="1463741691230" expanded="true" signature="10019:10130" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="10019:10131" ph="UPDATE accou... " />
-            <marker date="1463741691230" expanded="true" signature="10831:10850" ph="SELECT foo F... bar" />
-            <marker date="1463741691230" expanded="true" signature="11001:11020" ph="SELECT foo F... bar" />
+            <marker date="1463748115008" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
+            <marker date="1463748115008" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
+            <marker date="1463748115008" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="10474:10685" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="10888:11000" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="11666:11723" ph="SELECT * FRO... users" />
+            <marker date="1463748115008" expanded="true" signature="12438:12457" ph="SELECT foo F... bar" />
+            <marker date="1463748115008" expanded="true" signature="12608:12627" ph="SELECT foo F... bar" />
           </folding>
         </state>
       </provider>
@@ -1649,8 +1691,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="310">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1681,11 +1723,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthorise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+        <state relative-caret-position="218">
+          <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="224" column="24" selection-start-line="224" selection-start-column="24" selection-end-line="224" selection-end-column="24" />
+          <folding>
+            <marker date="1463748115008" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
+            <marker date="1463748115008" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
+            <marker date="1463748115008" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
+            <marker date="1463748115008" expanded="true" signature="10474:10685" ph="INSERT INTO accounts... " />
+            <marker date="1463748115008" expanded="true" signature="10888:11000" ph="UPDATE accou... " />
+            <marker date="1463748115008" expanded="true" signature="11666:11723" ph="SELECT * FRO... users" />
+            <marker date="1463748115008" expanded="true" signature="12438:12457" ph="SELECT foo F... bar" />
+            <marker date="1463748115008" expanded="true" signature="12608:12627" ph="SELECT foo F... bar" />
+          </folding>
         </state>
       </provider>
     </entry>
