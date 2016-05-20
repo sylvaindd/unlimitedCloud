@@ -1,11 +1,11 @@
 import {Fichier} from "./Fichier";
 
 export class Dossier {
-    private name:String;
-    private fichiers:Array<Fichier>;
-    private dossiers:Array<Dossier>;
-    private dateModif:Date;
-    private taille:number;
+    public name:String;
+    public fichiers:Array<Fichier>;
+    public dossiers:Array<Dossier>;
+    public dateModif:Date;
+    public taille:number;
 
     constructor(name:String, taille:number) {
         this.name = name;
