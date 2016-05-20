@@ -8,6 +8,7 @@ import {Upload} from "./Upload";
 import {ToolbarExplorer} from "./ToolbarExplorer";
 import {ContextMenuHolderComponent, ContextMenuDirective} from "./ContextMenuHolderComponent";
 import {ToolbarDetails} from "./ToolbarDetails";
+import {WebSocketService} from "./services/WebSocketService";
 
 @Component({
     selector: "explorer",
@@ -32,7 +33,7 @@ export class Explorer {
     linkFolder;
     linkFile;
 
-    constructor(private router:Router){
+    constructor(private router:Router, private webSocketService:WebSocketService){
         this.dossiers = new Array<Dossier>();
         this.fichiers = new Array<Fichier>();
         this.initTest();
@@ -46,17 +47,26 @@ export class Explorer {
             {title:'Suppimer', idaction: 5},
             {title:'Details', idaction: 6}
         ];
+
+    }
+
+    getFilesAndFolder()
+    {
+        this.webSocketService.askForFiles();
+        this.webSocketService.callBackGetFiles=function (data) {
+            parseJson();
+        }
     }
 
     initTest()
     {
         for(let i:number = 0 ; i < 19 ; i++ )
         {
-            this.dossiers.push(new Dossier("dossier"+i));
+            this.dossiers.push(new Dossier("dossier"+i, 100));
         }
         for(let i:number = 0 ; i < 30 ; i++ )
         {
-            this.fichiers.push(new Fichier("fichier"+i));
+            this.fichiers.push(new Fichier("fichier"+i, 20));
         }
     }
 }
