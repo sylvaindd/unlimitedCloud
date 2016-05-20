@@ -30,24 +30,24 @@ public class App
         server.addConnector(connector);
 
 
+        HandlerCollection collection = new HandlerCollection();
+
         ServletContextHandler handler = new ServletContextHandler(server, "/lebonnuage");
         handler.addServlet(MonNuage.class, "/");
 
         ServletContextHandler handlerCallbackdropboxauthorise = new ServletContextHandler(server, "/lebonnuage/callbackdropboxauthorise");
         handlerCallbackdropboxauthorise.addServlet(Callbackdropbox.class, "/");
+        collection.addHandler(handlerCallbackdropboxauthorise);
 
 
         ServletContextHandler handlerAskAuthorise = new ServletContextHandler(server, "/lebonnuage/askauthorise");
         handlerAskAuthorise.addServlet(AskAuthorise.class, "/");
-
-        HandlerCollection collection = new HandlerCollection();
-        collection.addHandler(handlerCallbackdropboxauthorise);
         collection.addHandler(handlerAskAuthorise);
 
         try
         {
             ServletHolder holderEvents = new ServletHolder("ws-events", EventServlet.class);
-            handler.addServlet(holderEvents, "/REST/*");
+            handler.addServlet(holderEvents, "/socket");
             // Initialize javax.websocket layer
             ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(handler);
 
