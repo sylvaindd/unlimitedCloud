@@ -66,6 +66,13 @@ export class Register {
 
         let callback = function(data){
             console.log(data.succes);
+            if(data.succes){
+                Validation.noErrorRegister();
+                this.contextContainer.token = data.token;
+                this.router.navigate(['/App']);
+            }else{
+                Validation.errorRegister(data.message);
+            }
         };
         
         this.apiService.register(this.username, this.mail, this.phone, this.password, callback);

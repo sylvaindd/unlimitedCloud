@@ -15,6 +15,7 @@ import {FirstPage} from "./FirstPage";
     {path: '/App', component: App},
     {path: '/App/Explorer', component: App},
     {path: '/App/Settings', component: App}
+    //{path: '/Explorer/Upload', component: App},
 ])
 
 export class MainPage {

@@ -67,6 +67,7 @@ public class MonNuage extends HttpServlet {
                 resp.setStatus(HttpStatus.NOT_FOUND_404);
                 resp.addHeader("Access-Control-Allow-Origin", "*");
         }
+        resp.addHeader("Content-Type", "application/json; charset=UTF-8");
 
     }
 
@@ -101,7 +102,13 @@ public class MonNuage extends HttpServlet {
                     resultSet.next();
                     if (resultSet.getString("password").equals(password)) {
                         erreur = false;
-                        token = resultSet.getString("tokenLeBonNuage");
+                        token = Security.generateToken();
+
+                        String req2 = "UPDATE users SET tokenLeBonNuage = '"+token+"' WHERE id = '"+resultSet.getInt("id")+"';";
+                        if(statement.executeUpdate(req2) > 0){
+                        }else{
+                            token = resultSet.getString("tokenLeBonNuage");
+                        }
                     } else {
                         erreur = true;
                         message = "Mot de passe incorrect";
@@ -156,6 +163,7 @@ public class MonNuage extends HttpServlet {
             int nbRows = 0;
             boolean erreur = false;
             String message = "";
+            String token = null;
             if (statement.execute(req)) {
                 ResultSet resultSet = statement.getResultSet();
                 resultSet.last();
@@ -178,7 +186,8 @@ public class MonNuage extends HttpServlet {
                     if (usernameUsed || mailUsed)
                         erreur = true;
                 } else {
-                    String req2 = "INSERT INTO users VALUES (NULL, '" + username + "', '" + password + "', '" + mail + "', '" + phone + "', '" + 1 + "', '" + Security.generateToken().toString() + "');";
+                    token = Security.generateToken();
+                    String req2 = "INSERT INTO users VALUES (NULL, '" + username + "', '" + password + "', '" + mail + "', '" + phone + "', '" + 1 + "', '" + token + "');";
 
                     System.out.println(req2);
                     if (statement.executeUpdate(req2) > 0) {
@@ -188,7 +197,7 @@ public class MonNuage extends HttpServlet {
                     }
                 }
             }
-            jsonObjectRet.put("succes", !erreur).put("message", message);
+            jsonObjectRet.put("succes", !erreur).put("message", message).put("token", token);
         } catch (SQLException e) {
             e.printStackTrace();
         }
