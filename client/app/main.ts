@@ -5,7 +5,9 @@ import { ROUTER_PROVIDERS} from '@angular/router';
 import 'rxjs/Rx'; // For using methods on observables
 import {MainPage} from "./MainPage";
 import {ContextContainer} from "./utils/ContextContainer";
+import {WebSocketService} from "./services/WebSocketService";
 import {ContextMenuService} from "./services/ContextMenuService";
 
 bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS, ContextContainer, [ContextMenuService]]);
+bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS, ContextContainer, WebSocketService]);
 

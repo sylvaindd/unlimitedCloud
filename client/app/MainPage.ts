@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Router, ROUTER_DIRECTIVES, Routes } from '@angular/router';
+import {Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
 import {App} from "./App";
 import {FirstPage} from "./FirstPage";
 
@@ -20,7 +20,7 @@ import {FirstPage} from "./FirstPage";
 
 export class MainPage {
 
-    constructor(private router: Router) {
+    constructor(private router:Router) {
     }
 
 }

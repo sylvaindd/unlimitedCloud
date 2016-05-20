@@ -1,13 +1,20 @@
 package com.ultimateCloud.App.cloudServices.Dropbox;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.googlecode.concurrenttrees.radix.RadixTree;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.ultimateCloud.App.interfaces.CloudServiceInterface;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.jsonParser.FileSystemParser;
 import com.ultimateCloud.App.models.FileCloud;
+import com.ultimateCloud.App.models.FileSystem;
+import com.ultimateCloud.App.models.FolderCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
+import org.json.JSONArray;
 import org.json.JSONObject;
+import utils.InMemoryFileSystem;
 
 import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
@@ -46,6 +53,12 @@ public class Dropbox extends CloudServiceInterface {
         return response;
     }
 
+    public String endAuth(){
+
+        String response = "<!DOCTYPE html><html> <body><script>window.close();</script></body></html>";
+        return response;
+    }
+
     public String getToken(String code,String tokenUltimateCloud){
         webTargetMain = client.target("");
         MultivaluedMap formData = new MultivaluedMapImpl();
@@ -69,7 +82,7 @@ public class Dropbox extends CloudServiceInterface {
         System.out.println("user_dropbox_id:"+user_dropbox_id+"token :"+token);
         //store token in bdd
         JDBCMysSQL.getInstance().addDropBoxTokenToOurAccount(token,user_dropbox_id,tokenUltimateCloud);
-        getFileList(new listFileJson(),token);
+
         return response ;
     }
 
@@ -92,17 +105,17 @@ public class Dropbox extends CloudServiceInterface {
         return null;
     }
 
-    public List<FileCloud> getFileList(listFileJson listFileJson, String token){
+    public List<FileSystem> getFileList(listFileJson listFileJson, String tokenDropbox){
         String response = webTargetMain.
                 path("files/list_folder").
                 request().
-                header(HttpHeaders.AUTHORIZATION,"Bearer "+token).
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenDropbox).
                 header(HttpHeaders.CONTENT_TYPE,"application/json").
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-        FileSystemParser.parse(response);
-        return null;
+      return FileSystemParser.parse(response);
+
     }
 
 }

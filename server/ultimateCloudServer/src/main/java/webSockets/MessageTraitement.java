@@ -1,5 +1,7 @@
 package webSockets;
 
+import org.json.JSONObject;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 
@@ -9,6 +11,6 @@ import javax.json.JsonObject;
 public class MessageTraitement {
 
     public static void messageTraitement(Message message){
-        JsonObject messageJson = message.getJson();
+        JSONObject messageJson = message.getJson();
     }
 }

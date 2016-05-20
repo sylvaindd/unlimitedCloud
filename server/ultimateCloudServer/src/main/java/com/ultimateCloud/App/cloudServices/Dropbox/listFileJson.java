@@ -7,8 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class listFileJson {
+    public listFileJson(String path) {
+        this.path = path;
+    }
+
     public String path= "";
-    public boolean recursive = true;
+    public boolean recursive = false;
     public boolean include_media_info= false;
     public boolean include_deleted= false;
     public boolean include_has_explicit_shared_members= false;

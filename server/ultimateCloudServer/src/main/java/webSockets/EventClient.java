@@ -6,6 +6,7 @@ package webSockets;
 
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
+import org.json.JSONObject;
 
 import java.net.URI;
 import java.util.concurrent.Future;
@@ -14,7 +15,7 @@ public class EventClient
 {
     public static void main(String[] args)
     {
-        URI uri = URI.create("ws://localhost:8080/lebonnuage/REST/dsd");
+        URI uri = URI.create("ws://localhost:8080/lebonnuage/REST/");
 
         WebSocketClient client = new WebSocketClient();
         try
@@ -29,7 +30,10 @@ public class EventClient
                 // Wait for Connect
                 Session session = fut.get();
                 // Send a message
-                session.getRemote().sendString("Hello");
+                JSONObject test = new JSONObject();
+                test.put("function","getFilesFolders");
+                test.put("token","tokentest");
+                session.getRemote().sendString(test.toString());
                 // Close session
                 session.close();
             }
