@@ -8,6 +8,5 @@ import {ContextContainer} from "./utils/ContextContainer";
 import {WebSocketService} from "./services/WebSocketService";
 import {ContextMenuService} from "./services/ContextMenuService";
 
-bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS, ContextContainer, [ContextMenuService]]);
-bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS, ContextContainer, WebSocketService]);
+bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS, ContextContainer, WebSocketService, ContextMenuService]);
 
