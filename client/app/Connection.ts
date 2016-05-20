@@ -55,6 +55,5 @@ export class Connection {
         }.bind(this);
 
         this.apiService.authent(this.mailOrUsername, this.password, callback);
-        this.router.navigate(['/App']);
     }
 }

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {WebSocketService} from "./services/WebSocketService";
+import {Explorer} from "./Explorer";
 
 @Component({
     selector: "toolbarExplorer",
@@ -10,15 +11,16 @@ import {WebSocketService} from "./services/WebSocketService";
 
 export class ToolbarExplorer {
     nameFolder:String;
-    constructor(private router:Router, private webSocketService:WebSocketService){
-        
+
+    constructor(private router:Router, private webSocketService:WebSocketService) {
+
     }
 
-    createFolder()
-    {
+    createFolder() {
         this.webSocketService.mkdir(this.nameFolder);
         console.log(this.nameFolder);
         this.nameFolder = "";
         this.router.navigate(['/App']);
     }
+
 }

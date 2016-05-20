@@ -8,6 +8,7 @@ export class WebSocketService {
 
     public callBackDropboxAdded;
     public callBackGetFiles;
+    public callBackConnected;
 
     constructor(private contextContainer:ContextContainer) {
 
@@ -19,7 +20,8 @@ export class WebSocketService {
         this.ws.onopen = function () {
             console.log('SOCKET : Connection open!');
             let json = {token: this.contextContainer.token};
-            this.ws.send(JSON.stringify(json));
+            this.sendJson(json);
+            this.callBackConnected();
         }.bind(this);
 
         this.ws.onclose = function () {
@@ -31,20 +33,30 @@ export class WebSocketService {
         }
 
         this.ws.onmessage = function (e) {
-            var server_message = e.data;
+            var server_message = JSON.parse(e.data);
             console.log("SOCKET : " + server_message);
 
 
-            switch (e.data.function) {
+            console.log("SOCKET : " + server_message.function);
+            switch (server_message.function) {
                 case "dropboxAdded":
-                    this.callBackDropboxAdded(e.data.data);
+                    this.callBackDropboxAdded(server_message.data);
                     break;
                 case "getFilesFolders":
-                    this.callBackGetFiles(e.data.data);
+                    this.callBackGetFiles(server_message.data);
                     break;
 
             }
-        }
+        }.bind(this);
+    }
+
+    createFolder(name) {
+
+    }
+
+    mkdir(name) {
+        let json = {function: "mkdir", fileName: name};
+        this.sendJson(json);
     }
 
     askForFiles() {

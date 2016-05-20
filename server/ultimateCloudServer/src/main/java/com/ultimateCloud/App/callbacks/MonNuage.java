@@ -72,14 +72,13 @@ public class MonNuage extends HttpServlet {
     }
 
     private void authent(StringBuffer jb, HttpServletResponse resp) {
-        JSONObject jsonObject = null;
+        JSONObject postData = null;
         try {
-            jsonObject = HTTP.toJSONObject(jb.toString());
+            postData = new JSONObject(jb.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        JSONObject postData = new JSONObject(jsonObject.getString("Method"));
 
         System.out.println(postData);
 

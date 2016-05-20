@@ -39,7 +39,7 @@ export class App {
     }
 
     ngOnInit() {
-        this.router.navigate(['App/Explorer']);
+        this.router.navigate(['/App/Explorer']);
     }
 
     deconnect() {
