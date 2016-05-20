@@ -1,15 +1,27 @@
 <ul class="nav navbar-nav">
     <li>
-        <span>Taille</span>
-    </li>
-    <li>
-        <p class="navbar-btn navBarElement" >
-            <a [routerLink]="['/App/Explorer/Upload']" class="btn btn-default">Upload</a>
+        <p class="navbar-btn navBarElement">
+            <span>Nom : </span>
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <a class="btn btn-default">Download</a>
+            <span>{{dossier.name}}</span>
+        </p>
+    </li>
+    <li>
+        <p class="navbar-btn navBarElement">
+            <span>Taille : </span>
+        </p>
+    </li>
+    <li>
+        <p class="navbar-btn navBarElement">
+            <span>{{dossier.taille}}</span>
+        </p>
+    </li>
+    <li>
+        <p class="navbar-btn navBarElement">
+            <a [routerLink]="['/App/Explorer']" class="btn btn-default">Annuler</a>
         </p>
     </li>
 </ul>

@@ -1,6 +1,7 @@
 import {Component,Directive,Input} from '@angular/core';
 import {ContextMenuService} from './services/ContextMenuService';
 import {Actions} from './models/Actions';
+import {Router} from '@angular/router';
 import {Subject} from 'rxjs/Rx';
 
 @Component({
@@ -27,7 +28,7 @@ export class ContextMenuHolderComponent{
     links = [];
     isShown = false;
     private mouseLocation :{left:number,top:number} = {left:0,top:0};
-constructor(private _contextMenuService:ContextMenuService){
+constructor(private _contextMenuService:ContextMenuService, private router:Router){
     _contextMenuService.show.subscribe(e => this.showMenu(e.event,e.obj));
 }
 
@@ -52,7 +53,7 @@ showMenu(event,links){
     }
 }
     selectAction(action:number){
-        new Actions().selectAction(action);
+        new Actions(this.router).selectAction(action);
     }
 }
 
