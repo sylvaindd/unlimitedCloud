@@ -7,6 +7,7 @@ export class WebSocketService {
     public ws:WebSocket;
 
     public callBackDropboxAdded;
+    public callBackGetFiles;
 
     constructor(private contextContainer:ContextContainer) {
 
@@ -34,10 +35,24 @@ export class WebSocketService {
             console.log("SOCKET : " + server_message);
 
 
-            if (e.data.func == "dropboxAdded") {
-                this.callBackDropboxAdded(e.data.data);
-            }
+            switch(e.data.function){
+                case "dropboxAdded":
+                    this.callBackDropboxAdded(e.data.data);
+                    break;
+                case "getFilesFolders":
+                    this.callBackGetFiles(e.data.data);
+                    break;
 
+            }
         }
+    }
+
+    askForFiles(){
+        let json = {function: "getFilesFolders", path : ""};
+        this.sendJson(json);
+    }
+
+    sendJson(json){
+        this.ws.send(JSON.stringify(json));
     }
 }
