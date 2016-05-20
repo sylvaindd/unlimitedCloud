@@ -57,7 +57,7 @@ public class WebSocketLeBonNuage {
             } else {
                 try {
                     session.close();
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 sendMessageToSession(session, "Wrong or expired Token");
