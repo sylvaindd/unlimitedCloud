@@ -1,12 +1,15 @@
 export class Fichier {
-    
-    private name:String;
-    private dateModif:Date;
-    private taille:number;
 
-    constructor(name:String, taille:number) {
+    public name:String;
+    public dateModif:Date;
+    public id:number;
+    public taille:number;
+    public type:String;
+
+    constructor(id:number, name:String, type:String) {
+        this.id = id;
         this.name = name;
-        this.taille = taille;
+        this.type = type;
     }
 
 }
