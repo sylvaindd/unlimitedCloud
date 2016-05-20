@@ -18,9 +18,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by thoma on 10/05/2016.
@@ -32,7 +30,7 @@ public class GoogleDrive extends CloudServiceInterface {
     public static final String CLIENT_ID = "758933709678-agp5qsi2lougn8vbe1to772cifpd50g6.apps.googleusercontent.com";
     public static final String CLIENT_SECRET = "HNIY1vOkmFjlXQsV3XrKyphc";
     public static final String REDIRECT = "/lebonnuage/askDriveauthorise";
-    public static final String REDIRECT_TOKEN = "/lebonnuage/callbackDriveauthorise";
+    public static final String REDIRECT_TOKEN = "http://localhost:8080/lebonnuage/callbackDriveauthorise";
     private WebTarget webTargetMain;
     private WebTarget webTargetoauth2;
     private Client client;
@@ -49,9 +47,10 @@ public class GoogleDrive extends CloudServiceInterface {
     public String getAuth(String token) {
         String url = new StringBuilder(
                 "<!DOCTYPE html><html> <body><script>window.location = \"https://accounts.google.com/o/oauth2/v2/auth?response_type=code")
+                .append("&scope=").append("https://www.googleapis.com/auth/drive")
                 .append("&state=").append(token)
                 .append("&client_id=").append(CLIENT_ID)
-                .append("&redirect_uri=").append(REDIRECT)
+                .append("&redirect_uri=").append(REDIRECT_TOKEN)
                 .append("\"; </script></body></html>")
                 .toString();
         return url;
@@ -79,7 +78,7 @@ public class GoogleDrive extends CloudServiceInterface {
 //        String user_googledrive_id =   obj.getString("uid");
 //        System.out.println("user_googledrive_id:"+user_googledrive_id+"token :"+token);
         //store token in bdd
-        JDBCMysSQL.getInstance().addGoogleDriveTokenToOurAccount(token,tokenUltimateCloud,tokenUltimateCloud);
+		JDBCMysSQL.getInstance().addGoogleDriveTokenToOurAccount(token, tokenUltimateCloud,tokenUltimateCloud);
         return response ;
     }
 
