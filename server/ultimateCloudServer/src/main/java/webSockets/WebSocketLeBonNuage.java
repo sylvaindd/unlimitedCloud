@@ -46,9 +46,9 @@ public class WebSocketLeBonNuage {
      */
     @OnMessage
     public void onMessage(Message message, Session session) {
+
         System.out.println("Message from " + session.getId() + ": " + message);
-        JSONObject jsonObject = new JSONObject(message);
-        if (message.getJson().get("token") != null && message.getJson().get("token").toString().length() > 0) {
+        if (message.getJson().has("token") && message.getJson().get("token").toString().length() > 0) {
             String token = message.getJson().get("token").toString();
             User user = JDBCMysSQL.getInstance().getUserFromToken(token);
             if (user != null) {
@@ -64,25 +64,32 @@ public class WebSocketLeBonNuage {
             }
         } else if (mapSessions.get(session.getId()) != null) {
             // process DATA
-            try {
 
-
-                User user = getUserFromSession(session);
-                JSONObject json = message.getJson();
-                System.out.println("Message : "+json.toString());
+            // try {
+            User user = getUserFromSession(session);
+            JSONObject json = message.getJson();
+            System.out.println("Message : " + json.toString());
+            if (json.has("function")) {
                 switch (json.getString("function")) {
                     case "getFilesFolders":
-                        WebSocketUtils.getFilesAndFolders(json.getString("path"), user);
+                        if (json.has("path"))
+                            sendMessageToSession(session,WebSocketUtils.getFilesAndFolders(json.getString("path"), user).toString());
+                        else {
+                            sendMessageToSession(session, new JSONObject().put("error", "miss path paramter").toString());
+                        }
                         break;
                     case "d":
                         break;
                     default:
                         sendMessageToSession(session, new JSONObject().put("error", "erreur function").toString());
                 }
-            } catch (Exception e) {
-                sendMessageToSession(session, new JSONObject().put("error", "erreur " + e.getMessage()).toString());
             }
+            /*} catch (Exception e) {
+                sendMessageToSession(session, new JSONObject().put("error", "erreur " + e.getMessage()).toString());
+            }*/
         }
+
+
     }
 
     public static User getUserFromSession(Session session) {
