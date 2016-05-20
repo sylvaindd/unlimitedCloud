@@ -76,8 +76,8 @@ public class GoogleDrive extends CloudServiceInterface {
 
         JSONObject obj = new JSONObject(response);
         String token = obj.getString("access_token");
-        String user_googledrive_id =   obj.getString("uid");
-        System.out.println("user_googledrive_id:"+user_googledrive_id+"token :"+token);
+//        String user_googledrive_id =   obj.getString("uid");
+//        System.out.println("user_googledrive_id:"+user_googledrive_id+"token :"+token);
         //store token in bdd
         JDBCMysSQL.getInstance().addGoogleDriveTokenToOurAccount(token,user_googledrive_id,tokenUltimateCloud);
         return response ;
