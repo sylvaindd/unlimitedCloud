@@ -80,7 +80,11 @@ public class WebSocketLeBonNuage {
                         break;
                     case "mkdir":
                         if(json.has("fileName"))
-                            sendMessageToSession(session,new JSONObject().put("function","getFilesFolders").put("data",WebSocketUtils.mkdir(json.getString("fileName"),user)).toString());
+                            sendMessageToSession(session,new JSONObject().put("function","mkdir").put("data",WebSocketUtils.mkdir(json.getString("fileName"),user)).toString());
+                        break;
+                    case "rm":
+                        if(json.has("idFile"))
+                            sendMessageToSession(session,new JSONObject().put("function","rm").put("data",WebSocketUtils.rm(json.getString("idFile"),user)).toString());
                         break;
                     default:
                         sendMessageToSession(session, new JSONObject().put("error", "erreur function").toString());

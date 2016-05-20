@@ -16,12 +16,17 @@
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <input type="text" name="nom du dossier">
+            <input [(ngModel)]="nameFolder" type="text" name="NameFolder" placeholder="Nom du dossier">
         </p>
     </li>
     <li>
         <p class="navbar-btn navBarElement">
-            <a class="btn btn-default">Créer le dossier</a>
+            <a (click)="createFolder()" class="btn btn-default">Créer le dossier</a>
+        </p>
+    </li>
+    <li>
+        <p class="navbar-btn navBarElement">
+            <a (click)="getFilesAndFolder()" class="btn btn-default">Rafraichir</a>
         </p>
     </li>
 </ul>
