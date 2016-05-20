@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-/// <reference path="typings/jquery/jquery.d.ts" />
+/// <reference path="./models/jquery.d.ts" />
 import {Router} from '@angular/router';
 import {Validation} from "./utils/Utils";
 import {APIService} from "./services/APIService";

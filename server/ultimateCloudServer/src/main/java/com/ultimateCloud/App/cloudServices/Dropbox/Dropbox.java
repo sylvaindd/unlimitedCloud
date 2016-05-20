@@ -3,6 +3,7 @@ package com.ultimateCloud.App.cloudServices.Dropbox;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.ultimateCloud.App.interfaces.CloudServiceInterface;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
+import com.ultimateCloud.App.jsonParser.FileSystemParser;
 import com.ultimateCloud.App.models.FileCloud;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
@@ -100,6 +101,7 @@ public class Dropbox extends CloudServiceInterface {
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
+        FileSystemParser.parse(response);
         return null;
     }
 
