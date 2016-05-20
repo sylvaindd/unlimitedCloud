@@ -1,7 +1,6 @@
 package com.ultimateCloud.App;
 
 import com.ultimateCloud.App.callbacks.AskAuthorise;
-import com.ultimateCloud.App.callbacks.AskAuthoriseDrive;
 import com.ultimateCloud.App.callbacks.Callbackdropbox;
 import com.ultimateCloud.App.callbacks.MonNuage;
 import org.eclipse.jetty.server.Server;
@@ -52,14 +51,11 @@ public class App
         // Dropbox services
         collection.addHandler(handlerCallbackdropboxauthorise);
         collection.addHandler(handlerAskAuthorise);
-        // GoogleDrive services
-        collection.addHandler(handlerCallbackGoogleDriveauthorise);
-        collection.addHandler(handlerAskDriveAuthorise);
 
         try
         {
             ServletHolder holderEvents = new ServletHolder("ws-events", EventServlet.class);
-            handler.addServlet(holderEvents, "/REST/*");
+            handler.addServlet(holderEvents, "/socket");
             // Initialize javax.websocket layer
             ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(handler);
 
