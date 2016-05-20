@@ -18,6 +18,6 @@ export class Settings {
 
     onAddDropboxAccount()
     {
-
+        //http://localhost:8080/lebonnuage/askauthorise?token_ultimate_cloud=tokentest
     }
 }

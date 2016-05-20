@@ -1,3 +1,10 @@
+<nav class="toolbarkit navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+            <router-outlet></router-outlet>
+
+    </div>
+</nav>
 <div class="elements">
     <div *ngFor="let dossier of dossiers; let i = index" class="element">
         <dossierComponent [dossier]=dossier></dossierComponent>
