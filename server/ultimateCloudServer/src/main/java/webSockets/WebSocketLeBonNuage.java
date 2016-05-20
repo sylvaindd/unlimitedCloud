@@ -78,7 +78,9 @@ public class WebSocketLeBonNuage {
                             sendMessageToSession(session, new JSONObject().put("error", "miss path paramter").toString());
                         }
                         break;
-                    case "d":
+                    case "mkdir":
+                        if(json.has("fileName"))
+                            sendMessageToSession(session,new JSONObject().put("function","getFilesFolders").put("data",WebSocketUtils.mkdir(json.getString("fileName"),user)).toString());
                         break;
                     default:
                         sendMessageToSession(session, new JSONObject().put("error", "erreur function").toString());

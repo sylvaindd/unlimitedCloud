@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
 import com.ultimateCloud.App.cloudServices.Dropbox.listFileJson;
+import com.ultimateCloud.App.cloudServices.GoogleDrive.GoogleDrive;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.models.FileCloud;
 import com.ultimateCloud.App.models.FileSystem;
@@ -19,6 +20,11 @@ import java.util.List;
  * Created by thoma on 20/05/2016.
  */
 public class WebSocketUtils {
+    public static JSONObject mkdir(String fileName,User user){
+            GoogleDrive googleDrive = new GoogleDrive();
+        List<String> listTokenDropBox = JDBCMysSQL.getInstance().getAllTokenCloudFromUser(2,String.valueOf(user.getId()));
+      return   googleDrive.mkdir(fileName,listTokenDropBox.get(0));
+    }
     public static JSONObject getFilesAndFolders(String path, User user){
         JSONObject jsonReturn = new JSONObject();
         List<FileSystem> allFileSystem = new ArrayList<>();

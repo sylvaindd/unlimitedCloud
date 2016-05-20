@@ -7,8 +7,8 @@ public class FileCloud extends FileSystem{
 
     public String dateDemodification;
 
-    public FileCloud(String id, String nom, String dateDemodification, String size) {
-        super(id,nom);
+    public FileCloud(String id, String nom, String type, String dateDemodification, String size) {
+        super(id,nom, type);
         this.dateDemodification = dateDemodification;
         this.size = size;
     }

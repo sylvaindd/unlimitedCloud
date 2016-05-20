@@ -114,7 +114,7 @@ public class Dropbox extends CloudServiceInterface {
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-      return FileSystemParser.parse(response);
+      return FileSystemParser.parse(response,"drop");
 
     }
 

@@ -98,11 +98,11 @@ public class GoogleDrive extends CloudServiceInterface {
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-        return FileSystemParser.parse(response);
+        return FileSystemParser.parse(response,"googledrive");
 
     }
 
-    public List<FileSystem> mkdir(String folder, String tokenGoogleDrive) {
+    public JSONObject mkdir(String folder, String tokenGoogleDrive) {
         Map<String, String> param = new HashMap<String, String>();
         param.put("uploadType", "media");
 
@@ -114,7 +114,7 @@ public class GoogleDrive extends CloudServiceInterface {
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-        return FileSystemParser.parse(response);
+        return new JSONObject(response);
     }
 
     public JsonObject rmdir(String folder) {

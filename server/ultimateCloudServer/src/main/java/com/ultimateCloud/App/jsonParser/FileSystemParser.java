@@ -18,7 +18,7 @@ import java.util.List;
  * Created by thoma on 20/05/2016.
  */
 public class FileSystemParser {
-    public static  List<FileSystem> parse(String json){
+    public static  List<FileSystem> parse(String json, String type){
        List<FileSystem> fileInFolder= new ArrayList<>();
         JSONObject jsonObj = new JSONObject(json);
        JSONArray fileFolderList= jsonObj.getJSONArray("entries");
@@ -31,12 +31,12 @@ public class FileSystemParser {
             String id = entrie.getString("id").replace("id:","");
             if(entrie.getString(".tag").equals("folder")){
 
-                fileSystem = new FolderCloud(id,name);
+                fileSystem = new FolderCloud(id,name,type);
             }
             else if(entrie.getString(".tag").equals("file")){
                 String dateDeModification = entrie.getString("client_modified");
                 String size = String.valueOf(entrie.getBigInteger("size"));
-                fileSystem = new FileCloud(id,name,dateDeModification,size);
+                fileSystem = new FileCloud(id,name,type,dateDeModification,size);
             }
             fileInFolder.add(fileSystem);
         }
