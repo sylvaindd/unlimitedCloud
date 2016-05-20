@@ -104,6 +104,23 @@ public class GoogleDrive extends CloudServiceInterface {
 
     public JSONObject mkdir(String folder, String tokenGoogleDrive) {
         Map<String, String> param = new HashMap<String, String>();
+        param.put("title", folder);
+        param.put("parents", "[{}]");
+        param.put("mimeType", "application/vnd.google-apps.folder");
+
+        String response = webTargetMain.
+                path("files").
+                request().
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenGoogleDrive).
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
+        return new JSONObject(response);
+    }
+
+    public JSONObject upload(String folder, String tokenGoogleDrive) {
+        Map<String, String> param = new HashMap<String, String>();
         param.put("uploadType", "media");
 
         String response = webTargetMain.
