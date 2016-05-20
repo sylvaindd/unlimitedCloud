@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Explorer} from "./Explorer";
 import {Settings} from "./Settings";
 import {ContextContainer} from "./utils/ContextContainer";
-import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
-/// <reference path="../typings/jquery/jquery.d.ts" />
+import {Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
+/// <reference path="./models/jquery.d.ts" />
+import {WebSocketService} from "./services/WebSocketService";
 
-declare var jQuery: JQueryStatic;
+declare var jQuery:JQueryStatic;
 
 @Component({
     selector: "app",
     templateUrl: "app/html/app.html",
-    directives:[Explorer, ROUTER_DIRECTIVES]
+    directives: [Explorer, ROUTER_DIRECTIVES]
 })
 
 @Routes([
@@ -22,33 +23,15 @@ declare var jQuery: JQueryStatic;
 
 export class App {
 
-    private ws:WebSocket;
-    constructor(private router: Router, private contextContainer: ContextContainer){
-        this.ws = new WebSocket("ws://127.0.0.1:8080/REST/");
-
-        this.ws.onopen = function(){
-            console.log('Connection open!');
-        }
-
-        this.ws.onclose = function(){
-            console.log('Connection closed');
-        }
-
-        this.ws.onerror = function(error){
-            console.log('Error detected: ' + error);
-        }
-
-        this.ws.onmessage = function(e){
-            var server_message = e.data;
-            console.log(server_message);
-        }
+    constructor(private router:Router, private contextContainer:ContextContainer, private webSocketService:WebSocketService) {
 
         console.log("Token : " + this.contextContainer.token);
+        this.webSocketService.init()
     }
 
-    ngAfterViewInit(){
-        jQuery("ul.toolbarTop li").click(function(){
-            jQuery("ul.toolbarTop li").each(function(){
+    ngAfterViewInit() {
+        jQuery("ul.toolbarTop li").click(function () {
+            jQuery("ul.toolbarTop li").each(function () {
                 jQuery(this).removeClass("active");
             });
             jQuery(this).addClass("active");
@@ -57,5 +40,10 @@ export class App {
 
     ngOnInit() {
         this.router.navigate(['App/Explorer']);
+    }
+
+    deconnect() {
+        this.contextContainer.token = "";
+        this.webSocketService.ws.close();
     }
 }
