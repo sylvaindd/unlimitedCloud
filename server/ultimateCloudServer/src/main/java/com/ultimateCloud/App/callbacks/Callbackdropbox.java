@@ -13,6 +13,7 @@ import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.models.User;
 
+import org.json.JSONObject;
 import webSockets.WebSocketLeBonNuage;
 
 /**
@@ -33,6 +34,12 @@ public class Callbackdropbox extends HttpServlet {
 			System.out.println("code" + code);
 			Dropbox dropbox = new Dropbox();
 			dropbox.getToken(code, ourToken);
+			User user = new User();
+			user.setToken(ourToken);
+			WebSocketLeBonNuage.findSessionAttachedToUser(user).getBasicRemote().sendText(new JSONObject().put("addDropBox",true).toString());
+            resp.getWriter().write(dropbox.endAuth());
+            resp.getWriter().flush();
+            resp.getWriter().close();
 		}
 
 	}

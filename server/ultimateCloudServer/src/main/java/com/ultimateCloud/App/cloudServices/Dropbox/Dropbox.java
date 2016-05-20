@@ -53,6 +53,12 @@ public class Dropbox extends CloudServiceInterface {
         return response;
     }
 
+    public String endAuth(){
+
+        String response = "<!DOCTYPE html><html> <body><script>window.close();</script></body></html>";
+        return response;
+    }
+
     public String getToken(String code,String tokenUltimateCloud){
         webTargetMain = client.target("");
         MultivaluedMap formData = new MultivaluedMapImpl();

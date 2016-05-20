@@ -12,6 +12,10 @@ public class User {
 	private String	mail;
 	private String	phone;
 	private int		idLevel;
+
+	public User() {
+	}
+
 	private String	token;
 
 	public User(ResultSet resultSet) throws SQLException {
