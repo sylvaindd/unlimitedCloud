@@ -19,7 +19,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by thoma on 10/05/2016.
