@@ -135,9 +135,6 @@ public class JDBCMysSQL {
                 }
             }
 
-
-
-
             // Now do something with the ResultSet ....
         } catch (Exception ex) {
             // handle any errors
@@ -190,47 +187,91 @@ public class JDBCMysSQL {
         } finally {  endSQL(stmt, rs); }
     }
 
-    public void addGoogleDriveTokenToOurAccount(String code, String idGoogleDrive, String tokenUltimateCloud) {
-        //TODO
-        Statement stmt = null;
-        ResultSet rs = null;
-        String req="";
-        String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
-        try {
-            stmt = conn.createStatement();
-            req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + idGoogleDrive + " AND idUser=" + idUserUltimateCloud + " AND codeCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
-            if (stmt.execute(req)) {
-                rs = stmt.getResultSet();
-                int size = 0;
-                if (rs != null) {
-                    rs.beforeFirst();
-                    rs.last();
-                    size = rs.getRow();
-                }
-
-                if (size == 0) {
-                    //insert
-                    req = "INSERT INTO accounts (idType,idCloudService,idUser,codeCloudService,tokenCloudService) " +
-                            "    VALUES (1, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + code + "','-1');";
-                    if (stmt.execute(req)) {
-                        rs = stmt.getResultSet();
+    public void addGoogleDriveCodeToOurAccount(String code, String idGoogleDrive, String tokenUltimateCloud) {
+            //TODO
+            Statement stmt = null;
+            ResultSet rs = null;
+            String req="";
+            String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
+            try {
+                stmt = conn.createStatement();
+                req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + idGoogleDrive + " AND idUser=" + idUserUltimateCloud + " AND codeCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
+                if (stmt.execute(req)) {
+                    rs = stmt.getResultSet();
+                    int size = 0;
+                    if (rs != null) {
+                        rs.beforeFirst();
+                        rs.last();
+                        size = rs.getRow();
                     }
-                } else {
-                    //update
-                    req = "UPDATE accounts set codeCloudService='" + code + "' where idCloudService ='" + idGoogleDrive + "' AND idType=2;";
-                    if (stmt.execute(req)) {
-                        rs = stmt.getResultSet();
+
+                    if (size == 0) {
+                        //insert
+                        req = "INSERT INTO accounts (idType,idCloudService,idUser,codeCloudService,tokenCloudService) " +
+                                "    VALUES (2, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + code + "','-1');";
+                        if (stmt.execute(req)) {
+                            rs = stmt.getResultSet();
+                        }
+                    } else {
+                        //update
+                        req = "UPDATE accounts set codeCloudService='" + code + "' where idCloudService ='" + idGoogleDrive + "' AND idType=2;";
+                        if (stmt.execute(req)) {
+                            rs = stmt.getResultSet();
+                        }
                     }
                 }
-            }
-            // Now do something with the ResultSet ....
-        } catch (Exception ex) {
-            // handle any errors
-            System.out.println(req);
-            System.out.println("SQLException: " + ex.getMessage()+ex.getLocalizedMessage());
+                // Now do something with the ResultSet ....
+            } catch (Exception ex) {
+                // handle any errors
+                System.out.println(req);
+                System.out.println("SQLException: " + ex.getMessage()+ex.getLocalizedMessage());
 
-        } finally {  endSQL(stmt, rs); }
+            } finally {  endSQL(stmt, rs); }
     }
+
+    public void addGoogleDriveTokenToOurAccount(String token, String idGoogleDrive, String tokenUltimateCloud) {
+            Statement stmt = null;
+            ResultSet rs = null;
+            String idUserUltimateCloud = getUserIdUltimateCloudFromToken(tokenUltimateCloud);
+            String req="";
+
+            try {
+                stmt = conn.createStatement();
+                req = "SELECT * FROM accounts WHERE idType=2 AND idCloudService=" + idGoogleDrive + " AND idUser=" + idUserUltimateCloud + " AND tokenCloudService  IS NOT NULL AND idCloudService IS NOT NULL";
+                if (stmt.execute(req)) {
+                    rs = stmt.getResultSet();
+                    int size = 0;
+                    if (rs != null) {
+                        rs.beforeFirst();
+                        rs.last();
+                        size = rs.getRow();
+                    }
+
+                    if (size == 0) {
+                        //insert
+                        req = "INSERT INTO accounts (idType,idCloudService,idUser,tokenCloudService,codeCloudService) " +
+                                "    VALUES (2, '" + idGoogleDrive + "', '" + idUserUltimateCloud + "','" + token + "','-1');";
+                        if (stmt.execute(req)) {
+                            rs = stmt.getResultSet();
+                        }
+                    } else {
+                        //update
+                        req = "UPDATE accounts set tokenCloudService='" + token + "' where idCloudService ='" + idGoogleDrive + "' AND idType=2;";
+                        if (stmt.execute(req)) {
+                            rs = stmt.getResultSet();
+                        }
+                    }
+                }
+
+                // Now do something with the ResultSet ....
+            } catch (Exception ex) {
+                // handle any errors
+                System.out.println(req);
+                System.out.println("SQLException: " + ex.getMessage());
+            } finally {
+                endSQL(stmt, rs);
+            }
+        }
 
     public void getDropBoxAccountList() {
         Statement stmt = null;

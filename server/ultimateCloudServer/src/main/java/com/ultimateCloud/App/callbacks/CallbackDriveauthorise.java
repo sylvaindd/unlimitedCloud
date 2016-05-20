@@ -1,6 +1,8 @@
 package com.ultimateCloud.App.callbacks;
 
+import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
 import com.ultimateCloud.App.cloudServices.GoogleDrive.GoogleDrive;
+import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import org.eclipse.jetty.http.HttpStatus;
 
 import javax.servlet.ServletException;
@@ -19,12 +21,19 @@ public class CallbackDriveauthorise extends HttpServlet {
 
     {
         resp.setStatus(HttpStatus.OK_200);
-        System.out.println("callback google");
         String ourToken = req.getParameter("state");
         String code = req.getParameter("code");
-        //store code in BDD
-        //TODO
-        //and asktoken
-        GoogleDrive drive = new GoogleDrive();
+        String user_id = req.getParameter("user_id");
+        if(code !=null && code!=""){
+            //onrécupère le code
+            //store code in BDD
+            JDBCMysSQL.getInstance().addGoogleDriveCodeToOurAccount(code,user_id,ourToken);
+            //and asktoken
+            System.out.println("code"+code);
+            GoogleDrive googledrive = new GoogleDrive();
+            googledrive.getToken(code,ourToken);
+
+        }
+
     }
 }

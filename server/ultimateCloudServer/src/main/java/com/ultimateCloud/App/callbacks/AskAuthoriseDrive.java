@@ -20,12 +20,10 @@ public class AskAuthoriseDrive extends HttpServlet {
 
     {
         resp.setStatus(HttpStatus.OK_200);
-
-        GoogleDrive drive = new GoogleDrive();
-        System.out.println("reponseaskauthorise"+drive.getAuth());
-        String rst = drive.getAuth();
-        rst.replace("<form action=\"/","<form action=\"https://www.dropbox.com/oauth2/authorize/");
-        resp.getWriter().write(drive.getAuth());
+        String tokenUltimateCloud = req.getParameter("token_ultimate_cloud");
+        GoogleDrive googledrive = new GoogleDrive();
+        System.out.println("reponseaskauthorise"+googledrive.getAuth(tokenUltimateCloud));
+        resp.getWriter().write(googledrive.getAuth(tokenUltimateCloud));
         resp.getWriter().flush();
         resp.getWriter().close();
 
