@@ -45,7 +45,7 @@ public class WebSocketUtils {
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
                 }
-                jsonReturn.append("file",new JSONObject(jsonInString));
+                jsonReturn.append("files",new JSONObject(jsonInString));
             }
 
             else if(fileSystem instanceof FolderCloud){
@@ -57,7 +57,7 @@ public class WebSocketUtils {
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
                 }
-                jsonReturn.append("folder",new JSONObject(jsonInString));
+                jsonReturn.append("folders",new JSONObject(jsonInString));
             }
         }
         System.out.println(jsonReturn.toString());
