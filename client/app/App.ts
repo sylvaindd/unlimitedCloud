@@ -3,6 +3,9 @@ import {Explorer} from "./Explorer";
 import {Settings} from "./Settings";
 import {ContextContainer} from "./utils/ContextContainer";
 import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
+/// <reference path="../typings/jquery/jquery.d.ts" />
+
+declare var jQuery: JQueryStatic;
 
 @Component({
     selector: "app",
@@ -41,6 +44,15 @@ export class App {
         }
 
         console.log("Token : " + this.contextContainer.token);
+    }
+
+    ngAfterViewInit(){
+        jQuery("ul.toolbarTop li").click(function(){
+            jQuery("ul.toolbarTop li").each(function(){
+                jQuery(this).removeClass("active");
+            });
+            jQuery(this).addClass("active");
+        });
     }
 
     ngOnInit() {
