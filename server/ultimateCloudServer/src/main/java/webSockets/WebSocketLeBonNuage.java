@@ -18,7 +18,7 @@ import java.util.*;
 @ServerEndpoint(value = "/socket", encoders = { MessageEncoder.class }, decoders = { MessageDecoder.class })
 public class WebSocketLeBonNuage {
 
-	public static final Set					sessions	= Collections.synchronizedSet(new HashSet());
+	public static final List<Session>		sessions	= Collections.synchronizedList(new ArrayList<Session>());
 	public static final Map<String, User>	mapSessions	= Collections.synchronizedMap(new HashMap<String, User>());
 
 	/**
@@ -55,12 +55,13 @@ public class WebSocketLeBonNuage {
 				sendMessageToSession(session, "Authenticated succesfully");
 			}
 			else {
-                try {
-                    session.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                sendMessageToSession(session, "Wrong or expired Token");
+				try {
+					session.close();
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+				sendMessageToSession(session, "Wrong or expired Token");
 			}
 		}
 		else if (mapSessions.get(session.getId()) != null) {
@@ -87,6 +88,21 @@ public class WebSocketLeBonNuage {
 	public void onClose(Session session) {
 		System.out.println("Session " + session.getId() + " has ended");
 		sessions.remove(session);
+	}
+
+	public static Session findSessionAttachedToUser(User user) {
+		Session session = null;
+		for (Map.Entry<String, User> entry : mapSessions.entrySet()) {
+			if (entry.getValue().getToken().equals(user.getToken())) {
+
+				for (Session s : sessions) {
+					if (s.getId().equals(entry.getValue())) {
+						return session;
+					}
+				}
+			}
+		}
+		return null;
 	}
 
 }
