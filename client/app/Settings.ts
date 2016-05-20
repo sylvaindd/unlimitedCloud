@@ -17,6 +17,13 @@ export class Settings {
     onAddGoogleAccount()
     {
 
+        let url = "http://localhost:8080/lebonnuage/askDriveauthorise?token_ultimate_cloud="+this.contextContainer.token;
+        let windowObjectReference;
+
+        windowObjectReference = window.open(url,
+            'DescriptiveWindowName',
+            'width=420,height=230,resizable,scrollbars=yes,status=0,toolbar=0,menubar=0,location=0'
+        );
     }
 
     onAddDropboxAccount()
