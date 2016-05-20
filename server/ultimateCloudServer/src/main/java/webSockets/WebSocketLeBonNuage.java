@@ -73,7 +73,7 @@ public class WebSocketLeBonNuage {
                 switch (json.getString("function")) {
                     case "getFilesFolders":
                         if (json.has("path"))
-                            sendMessageToSession(session,WebSocketUtils.getFilesAndFolders(json.getString("path"), user).toString());
+                            sendMessageToSession(session,new JSONObject().put("function","getFilesFolders").put("data",WebSocketUtils.getFilesAndFolders(json.getString("path"), user)).toString());
                         else {
                             sendMessageToSession(session, new JSONObject().put("error", "miss path paramter").toString());
                         }
