@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by steven on 19/05/2016.
  */
-public class CallbackDriveauthorise extends HttpServlet {
+public class CallbackDrive extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException

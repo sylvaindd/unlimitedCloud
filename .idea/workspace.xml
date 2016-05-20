@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDrive.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthoriseDrive.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthoriseDrive.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java" />
     </list>
     <list id="0000f9e0-c132-44bf-b76c-530166596006" name="New changelist" comment="" />
     <ignored path="unlimitedCloud.iws" />
@@ -35,60 +33,7 @@
     <favorites_list name="unlimitedCloud" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CallbackDriveauthorise.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCMysSQL.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="226" column="18" selection-start-line="226" selection-start-column="18" selection-end-line="226" selection-end-column="18" />
-              <folding>
-                <marker date="1463741210270" expanded="true" signature="1358:1427" ph="SELECT id FR... users" />
-                <marker date="1463741210270" expanded="true" signature="3169:3348" ph="SELECT * FRO... accounts" />
-                <marker date="1463741210270" expanded="true" signature="3711:3918" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="4120:4228" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="5044:5222" ph="SELECT * FRO... accounts" />
-                <marker date="1463741210270" expanded="true" signature="5585:5672" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="5585:5676" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="5585:5791" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="5993:6099" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="6960:7142" ph="SELECT * FRO... accounts" />
-                <marker date="1463741210270" expanded="true" signature="7549:7763" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="7989:8098" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="7989:8099" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="8988:9171" ph="SELECT * FRO... accounts" />
-                <marker date="1463741210270" expanded="true" signature="9578:9793" ph="INSERT INTO accounts... " />
-                <marker date="1463741210270" expanded="true" signature="10019:10130" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="10019:10131" ph="UPDATE accou... " />
-                <marker date="1463741210270" expanded="true" signature="10831:10850" ph="SELECT foo F... bar" />
-                <marker date="1463741210270" expanded="true" signature="11001:11020" ph="SELECT foo F... bar" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Callbackdropbox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/Callbackdropbox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="0" selection-start-line="16" selection-start-column="3" selection-end-line="38" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -946,7 +891,7 @@
       <workItem from="1463733259574" duration="179000" />
       <workItem from="1463733689640" duration="58000" />
       <workItem from="1463733862121" duration="2725000" />
-      <workItem from="1463740550499" duration="664000" />
+      <workItem from="1463740550499" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -1039,15 +984,22 @@
       <option name="project" value="LOCAL" />
       <updated>1463738651402</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Correction d'une requête google drive, gestion des callback drive">
+      <created>1463741241111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1463741241111</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45888000" />
+    <option name="totallyTimeSpent" value="45954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1060,7 +1012,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23971723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23971723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1131,7 +1083,8 @@
     <MESSAGE value="begginig of explorer" />
     <MESSAGE value="rooting connection" />
     <MESSAGE value="Requête google drive vers bdd&#10;googledrive mis à jour" />
-    <option name="LAST_COMMIT_MESSAGE" value="Requête google drive vers bdd&#10;googledrive mis à jour" />
+    <MESSAGE value="Correction d'une requête google drive, gestion des callback drive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction d'une requête google drive, gestion des callback drive" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1478,24 +1431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/Callbackdropbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="0" selection-start-line="16" selection-start-column="3" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1520,6 +1455,24 @@
             <marker date="1463741210270" expanded="true" signature="10019:10131" ph="UPDATE accou... " />
             <marker date="1463741210270" expanded="true" signature="10831:10850" ph="SELECT foo F... bar" />
             <marker date="1463741210270" expanded="true" signature="11001:11020" ph="SELECT foo F... bar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/Callbackdropbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="38" column="0" selection-start-line="16" selection-start-column="3" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
