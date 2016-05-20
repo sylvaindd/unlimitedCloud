@@ -67,7 +67,7 @@ public class GoogleDrive extends CloudServiceInterface {
         formData.add("redirect_uri",  REDIRECT_TOKEN);
 
         String response = webTargetMain.
-                path("https://api.dropboxapi.com/oauth2/token"). //TODO a changer
+                path("https://www.googleapis.com/oauth2/v4/token").
                 request().
                 accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.form(formData)).readEntity(String.class);
         if(DEBUG)
