@@ -6,6 +6,7 @@ import com.ultimateCloud.App.interfaces.CloudServiceInterface;
 import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.jsonParser.FileSystemParser;
 import com.ultimateCloud.App.models.FileCloud;
+import com.ultimateCloud.App.models.FileSystem;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.json.JSONObject;
@@ -83,27 +84,36 @@ public class GoogleDrive extends CloudServiceInterface {
         return response ;
     }
 
-    public List<FileCloud> getFileList(listFileJson listFileJson, String token){
+    public List<FileSystem> getFileList(listFileJson listFileJson, String tokenGoogleDrive){
+        Map<String, String> param = new HashMap<String, String>();
+        param.put("corpus", "DEFAULT");
+        param.put("maxResults", "1000");
+
         String response = webTargetMain.
-                path("files/list_folder").
+                path("files").
                 request().
-                header(HttpHeaders.AUTHORIZATION,"Bearer "+token).
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenGoogleDrive).
                 header(HttpHeaders.CONTENT_TYPE,"application/json").
-                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(listFileJson)).readEntity(String.class);
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
         if(DEBUG)
             System.out.println(response);
-        FileSystemParser.parse(response);
-        return null; //TODO
+        return FileSystemParser.parse(response);
+
     }
 
-    public JsonObject getFileInformations(String path) {
-        //TODO
-        return null;
-    }
+    public List<FileSystem> mkdir(String folder, String tokenGoogleDrive) {
+        Map<String, String> param = new HashMap<String, String>();
+        param.put("uploadType", "media");
 
-    public JsonObject mkdir(String folder) {
-        //TODO
-        return null;
+        String response = webTargetMain.
+                path("files").
+                request().
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenGoogleDrive).
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(param)).readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
+        return FileSystemParser.parse(response);
     }
 
     public JsonObject rmdir(String folder) {
