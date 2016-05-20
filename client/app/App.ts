@@ -3,7 +3,7 @@ import {Explorer} from "./Explorer";
 import {Settings} from "./Settings";
 import {ContextContainer} from "./utils/ContextContainer";
 import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
-/// <reference path="../typings/jquery/jquery.d.ts" />
+/// <reference path="./models/jquery.d.ts" />
 
 declare var jQuery: JQueryStatic;
 
