@@ -3,6 +3,7 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {Validation} from "./utils/Utils";
 import {APIService} from "./services/APIService";
+import {ContextContainer} from "./utils/ContextContainer";
 
 declare var jQuery:JQueryStatic;
 
@@ -17,7 +18,7 @@ export class Connection {
     password:String;
     mailOrUsername:String;
 
-    constructor(private apiService:APIService, private router:Router) {
+    constructor(private apiService:APIService, private router:Router, private contextContainer: ContextContainer) {
         this.password = "";
         this.mailOrUsername = "";
     }
@@ -45,7 +46,11 @@ export class Connection {
         let callback = function(data){
             console.log(data.succes);
             if(data.succes){
+                Validation.noErrorConnection();
+                this.contextContainer.token = data.token;
                 this.router.navigate(['/App']);
+            }else{
+                Validation.errorConnection(data.message);
             }
         }.bind(this);
 
