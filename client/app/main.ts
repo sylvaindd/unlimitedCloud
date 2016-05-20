@@ -1,12 +1,9 @@
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {HTTP_PROVIDERS} from '@angular/http';
-import { ROUTER_PROVIDERS } from '@angular/router';
-import {Explorer} from "./Explorer";
+import { ROUTER_PROVIDERS} from '@angular/router';
 // Dependencies for HTTP service
 import 'rxjs/Rx'; // For using methods on observables
-import {App} from "./App";
-import {Connection} from "./Connection";
+import {MainPage} from "./MainPage";
 
-//bootstrap(Connection, [ROUTER_PROVIDERS]);
-bootstrap(Explorer, [HTTP_PROVIDERS]);
+bootstrap(MainPage, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
 

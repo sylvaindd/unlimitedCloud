@@ -1,0 +1,26 @@
+<link href="../css/bootstrap-social.less" rel="stylesheet">
+<link href="../css/bootstrap-social.css" rel="stylesheet">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <tabs>
+                    <tab [tab-title]="'Login'">
+                        <connection></connection>
+                    </tab>
+                    <tab [tab-title]="'Register'">
+                        <register></register>
+                    </tab>
+                </tabs>
+            </div>
+            <a class="btn btn-block btn-social btn-google">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+            <a class="btn btn-block btn-social btn-dropbox">
+                <span class="fa fa-dropbox"></span> Sign in with Dropbox
+            </a>
+        </div>
+    </div>
+</div>

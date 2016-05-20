@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Dossier} from "./models/Dossier";
 
 @Component({
     selector: "dossierComponent",
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class DossierComponent {
 
+    @Input() dossier:Dossier;
+    
     constructor(){
 
     }

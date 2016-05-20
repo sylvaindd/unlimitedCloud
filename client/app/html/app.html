@@ -1,1 +1,22 @@
-<connection></connection>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container"><span class="navbar-brand hidden-xs">Le Bon Nuage</span>
+
+        <!--<button class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navHeaderCollapse"><span-->
+        <!--class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+
+        <!--</button>-->
+        <div class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a [routerLink]="['/App/Explorer']">Explorateur</a>
+                </li>
+                <li><a [routerLink]="['/App/Settings']">Paramètres</a>
+                </li>
+                <li><a [routerLink]="['/']">Deconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

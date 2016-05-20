@@ -1,1 +1,8 @@
-<drawer></drawer>
+<div class="elements">
+    <div *ngFor="let dossier of dossiers; let i = index" class="element">
+        <dossierComponent [dossier]=dossier></dossierComponent>
+    </div>
+    <div *ngFor="let fichier of fichiers; let i = index" class="element">
+        <fichierComponent [fichier]=fichier></fichierComponent>
+    </div>
+</div>

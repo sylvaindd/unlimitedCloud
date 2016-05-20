@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import {Connection} from "./Connection";
+import {Explorer} from "./Explorer";
+import {Settings} from "./Settings";
+import { Router, ROUTER_DIRECTIVES, Routes} from '@angular/router';
 
 @Component({
     selector: "app",
     templateUrl: "app/html/app.html",
-    directives:[Connection]
+    directives:[Explorer, ROUTER_DIRECTIVES]
 })
+
+@Routes([
+    {path: '/', component: Explorer},
+    {path: '/Explorer', component: Explorer},
+    {path: '/Settings', component: Settings}
+])
+
+
 export class App {
 
     private ws:WebSocket;
-    constructor(){
+    constructor(private router: Router){
         this.ws = new WebSocket("ws://127.0.0.1:8080/REST/");
 
         this.ws.onopen = function(){
@@ -28,5 +38,9 @@ export class App {
             var server_message = e.data;
             console.log(server_message);
         }
+    }
+
+    ngOnInit() {
+        this.router.navigate(['App/Explorer']);
     }
 }
