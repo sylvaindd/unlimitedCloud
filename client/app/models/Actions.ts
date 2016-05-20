@@ -1,5 +1,7 @@
+import {Router} from '@angular/router';
+
 export class Actions{
-    constructor(){
+    constructor(private router:Router){
     }
 
     selectAction(id:number){
@@ -34,6 +36,7 @@ export class Actions{
     }
 
     detailsFolder(){
+        this.router.navigate(['/App/Explorer/Details']);
         console.log("details folder")
     }
 
@@ -46,6 +49,7 @@ export class Actions{
     }
 
     detailsFile(){
+        this.router.navigate(['/App/Explorer/Details']);
         console.log("details File")
     }
 }
