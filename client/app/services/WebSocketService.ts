@@ -9,6 +9,7 @@ export class WebSocketService {
     public callBackDropboxAdded;
     public callBackGetFiles;
     public callBackConnected;
+    public isConnected;
 
     constructor(private contextContainer:ContextContainer) {
 
@@ -22,6 +23,7 @@ export class WebSocketService {
             let json = {token: this.contextContainer.token};
             this.sendJson(json);
             this.callBackConnected();
+            this.isConnected = true;
         }.bind(this);
 
         this.ws.onclose = function () {
@@ -34,10 +36,7 @@ export class WebSocketService {
 
         this.ws.onmessage = function (e) {
             var server_message = JSON.parse(e.data);
-            console.log("SOCKET : " + server_message);
 
-
-            console.log("SOCKET : " + server_message.function);
             switch (server_message.function) {
                 case "dropboxAdded":
                     this.callBackDropboxAdded(server_message.data);

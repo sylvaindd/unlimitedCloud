@@ -21,8 +21,6 @@ public class EventClient
         EventClient client = new EventClient(uri);
         try
         {
-            try
-            {
                 client.addMessageHandler(new EventClient.MessageHandler() {
                     public void handleMessage(String message) {
                         System.out.println(message);
@@ -36,18 +34,22 @@ public class EventClient
                 fct.put("function","getFilesFolders");
                 fct.put("path","");
                client.sendMessage(fct.toString());
-
+               /* fct.put("function","mkdir");
+                fct.put("fileName","testtttt");
+                client.sendMessage(fct.toString());*/
+               /* fct.put("function","getFilesFolders");
+                fct.put("path","");
+                client.sendMessage(fct.toString());*/
               //  Thread.sleep(10000);
+                while (true){
+                    Thread.sleep(100);
+                    Thread.yield();
+                }
 
-            }
-            finally
-            {
-                //client.stop();
-            }
         }
-        catch (Throwable t)
+        catch (Exception e)
         {
-            t.printStackTrace(System.err);
+            e.printStackTrace();
         }
     }
     Session userSession = null;
