@@ -48,14 +48,17 @@ export class Explorer {
             {title: 'Details', idaction: 6}
         ];
 
-        this.webSocketService.callBackConnected = function () {
+        if (this.webSocketService.isConnected) {
             this.getFilesAndFolder();
-        }.bind(this);
+        } else {
+            this.webSocketService.callBackConnected = function () {
+                this.getFilesAndFolder();
+            }.bind(this);
+        }
 
         this.webSocketService.callBackGetFiles = function (data) {
             this.dossiers = new Array<Dossier>();
             this.fichiers = new Array<Fichier>();
-            console.log(data.folders);
             for (let folder of data.folders) {
                 this.dossiers.push(new Dossier(folder.id, folder.nom, folder.type));
             }
