@@ -37,11 +37,11 @@
       <file leaf-file-name="GoogleDrive.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+            <state relative-caret-position="297">
+              <caret line="122" column="26" selection-start-line="122" selection-start-column="26" selection-end-line="122" selection-end-column="26" />
               <folding>
-                <element signature="e#3750#3766#0" expanded="true" />
-                <element signature="e#4445#4461#0" expanded="true" />
+                <element signature="e#3855#3871#0" expanded="true" />
+                <element signature="e#4558#4574#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="857">
-              <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+              <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -296,6 +296,40 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webSockets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unlimitedCloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unlimitedCloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ultimateCloudServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -499,32 +533,14 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/Explorer.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/Settings.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/css/app.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/css/signin.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/explorer.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/toolbarExplorer.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/upload.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/main.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthorise.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/Callbackdropbox.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/listFileJson.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/interfaces/CloudServiceInterface.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jsonParser/FileSystemParser.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/models/User.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/EventClient.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/EventSocket.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/Message.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/MessageDecoder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/MessageTraitement.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/models/FileCloud.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/models/FileSystem.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/models/FolderCloud.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/WebSocketUtils.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/webSockets/WebSocketLeBonNuage.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/ultimateCloudServer.iml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -532,15 +548,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/ContextMenuHolderComponent.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/ToolbarDetails.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/html/toolbarDetails.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/models/Actions.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/client/app/services/ContextMenuService.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/ConcurrentRadixTreeInMemoryFileSystem.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/InMemoryFileSystem.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/InMemoryFileSystemUsage.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/utils/WebSocketUtils.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1106,7 +1113,7 @@
       <workItem from="1463733259574" duration="179000" />
       <workItem from="1463733689640" duration="58000" />
       <workItem from="1463733862121" duration="2725000" />
-      <workItem from="1463740550499" duration="6578000" />
+      <workItem from="1463740550499" duration="7410000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -1248,11 +1255,25 @@
       <option name="project" value="LOCAL" />
       <updated>1463748444263</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="mkdir/list file google done">
+      <created>1463751556373</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1463751556373</updated>
+    </task>
+    <task id="LOCAL-00022" summary="mkdir/list file google done">
+      <created>1463751593781</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1463751593781</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51802000" />
+    <option name="totallyTimeSpent" value="52634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1344,7 +1365,8 @@
     <MESSAGE value="rename callback drive" />
     <MESSAGE value="intégration des callback dans l'app" />
     <MESSAGE value="changment url token" />
-    <option name="LAST_COMMIT_MESSAGE" value="changment url token" />
+    <MESSAGE value="mkdir/list file google done" />
+    <option name="LAST_COMMIT_MESSAGE" value="mkdir/list file google done" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1606,23 +1628,23 @@
         <state relative-caret-position="565">
           <caret line="223" column="4" selection-start-line="223" selection-start-column="4" selection-end-line="223" selection-end-column="4" />
           <folding>
-            <marker date="1463748424282" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
-            <marker date="1463748424282" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
-            <marker date="1463748424282" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="10474:10685" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="10888:11000" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="11666:11723" ph="SELECT * FRO... users" />
-            <marker date="1463748424282" expanded="true" signature="12438:12457" ph="SELECT foo F... bar" />
-            <marker date="1463748424282" expanded="true" signature="12608:12627" ph="SELECT foo F... bar" />
+            <marker date="1463751568982" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
+            <marker date="1463751568982" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
+            <marker date="1463751568982" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="10585:10708" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="10911:11023" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="11689:11746" ph="SELECT * FRO... users" />
+            <marker date="1463751568982" expanded="true" signature="12461:12480" ph="SELECT foo F... bar" />
+            <marker date="1463751568982" expanded="true" signature="12631:12650" ph="SELECT foo F... bar" />
           </folding>
         </state>
       </provider>
@@ -1696,23 +1718,23 @@
         <state relative-caret-position="336">
           <caret line="240" column="29" selection-start-line="240" selection-start-column="29" selection-end-line="240" selection-end-column="29" />
           <folding>
-            <marker date="1463748424282" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
-            <marker date="1463748424282" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
-            <marker date="1463748424282" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
-            <marker date="1463748424282" expanded="true" signature="10474:10685" ph="INSERT INTO accounts... " />
-            <marker date="1463748424282" expanded="true" signature="10888:11000" ph="UPDATE accou... " />
-            <marker date="1463748424282" expanded="true" signature="11666:11723" ph="SELECT * FRO... users" />
-            <marker date="1463748424282" expanded="true" signature="12438:12457" ph="SELECT foo F... bar" />
-            <marker date="1463748424282" expanded="true" signature="12608:12627" ph="SELECT foo F... bar" />
+            <marker date="1463751568982" expanded="true" signature="1502:1582" ph="SELECT token... accounts" />
+            <marker date="1463751568982" expanded="true" signature="2489:2560" ph="SELECT id FR... users" />
+            <marker date="1463751568982" expanded="true" signature="4189:4368" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="4732:4939" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="5142:5250" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="6068:6246" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="6610:6816" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="7019:7125" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="7978:8180" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="8544:8754" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="8957:9067" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="9907:10110" ph="SELECT * FRO... accounts" />
+            <marker date="1463751568982" expanded="true" signature="10585:10708" ph="INSERT INTO accounts... " />
+            <marker date="1463751568982" expanded="true" signature="10911:11023" ph="UPDATE accou... " />
+            <marker date="1463751568982" expanded="true" signature="11689:11746" ph="SELECT * FRO... users" />
+            <marker date="1463751568982" expanded="true" signature="12461:12480" ph="SELECT foo F... bar" />
+            <marker date="1463751568982" expanded="true" signature="12631:12650" ph="SELECT foo F... bar" />
           </folding>
         </state>
       </provider>
@@ -1720,18 +1742,18 @@
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="857">
-          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+        <state relative-caret-position="297">
+          <caret line="122" column="26" selection-start-line="122" selection-start-column="26" selection-end-line="122" selection-end-column="26" />
           <folding>
-            <element signature="e#3750#3766#0" expanded="true" />
-            <element signature="e#4445#4461#0" expanded="true" />
+            <element signature="e#3855#3871#0" expanded="true" />
+            <element signature="e#4558#4574#0" expanded="true" />
           </folding>
         </state>
       </provider>

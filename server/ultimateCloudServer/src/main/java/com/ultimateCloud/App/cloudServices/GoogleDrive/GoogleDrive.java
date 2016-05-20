@@ -117,13 +117,15 @@ public class GoogleDrive extends CloudServiceInterface {
         return new JSONObject(response);
     }
 
-    public JsonObject rmdir(String folder) {
-        //TODO
-        return null;
-    }
-
-    public JsonObject rm(String file) {
-        //TODO
-        return null;
+    public JSONObject rm(String folder, String tokenGoogleDrive) {
+        String response = webTargetMain.
+                path("files/" + folder).
+                request().
+                header(HttpHeaders.AUTHORIZATION,"Bearer "+tokenGoogleDrive).
+                header(HttpHeaders.CONTENT_TYPE,"application/json").
+                accept(MediaType.APPLICATION_JSON_TYPE).delete().readEntity(String.class);
+        if(DEBUG)
+            System.out.println(response);
+        return new JSONObject(response);
     }
 }
