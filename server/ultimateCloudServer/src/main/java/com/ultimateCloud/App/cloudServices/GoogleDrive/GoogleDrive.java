@@ -31,8 +31,8 @@ public class GoogleDrive extends CloudServiceInterface {
     private static final String baseUri= "https://www.googleapis.com/drive/v2/";
     public static final String CLIENT_ID = "758933709678-agp5qsi2lougn8vbe1to772cifpd50g6.apps.googleusercontent.com";
     public static final String CLIENT_SECRET = "HNIY1vOkmFjlXQsV3XrKyphc";
-    public static final String REDIRECT = "http://localhost:8080/lebonnuage/callbackdriveauthorise";
-    public static final String REDIRECT_TOKEN = "http://localhost:8080/lebonnuage/callbackdrivetoken";
+    public static final String REDIRECT = "/lebonnuage/askDriveauthorise";
+    public static final String REDIRECT_TOKEN = "/lebonnuage/callbackDriveauthorise";
     private WebTarget webTargetMain;
     private WebTarget webTargetoauth2;
     private Client client;
@@ -64,7 +64,7 @@ public class GoogleDrive extends CloudServiceInterface {
         formData.add("grant_type", "authorization_code");
         formData.add("client_id", CLIENT_ID);
         formData.add("client_secret",  CLIENT_SECRET);
-        formData.add("redirect_uri",  REDIRECT);
+        formData.add("redirect_uri",  REDIRECT_TOKEN);
 
         String response = webTargetMain.
                 path("https://api.dropboxapi.com/oauth2/token"). //TODO a changer

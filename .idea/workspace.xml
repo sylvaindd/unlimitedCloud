@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5d7969-9e35-4f0f-8ed8-96d1c6a797b9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDrive.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" afterPath="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" />
     </list>
     <list id="0000f9e0-c132-44bf-b76c-530166596006" name="New changelist" comment="" />
     <ignored path="unlimitedCloud.iws" />
@@ -33,7 +34,38 @@
     <favorites_list name="unlimitedCloud" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="GoogleDrive.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,10 +114,11 @@
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive.java" />
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/MonNuage.java" />
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/pom.xml" />
-        <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" />
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/AskAuthoriseDrive.java" />
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/CallbackDriveauthorise.java" />
         <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java" />
+        <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java" />
+        <option value="$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java" />
       </list>
     </option>
   </component>
@@ -341,6 +374,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cloudServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GoogleDrive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unlimitedCloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unlimitedCloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ultimateCloudServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudServices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dropbox" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,7 +970,7 @@
       <workItem from="1463733259574" duration="179000" />
       <workItem from="1463733689640" duration="58000" />
       <workItem from="1463733862121" duration="2725000" />
-      <workItem from="1463740550499" duration="730000" />
+      <workItem from="1463740550499" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary="ideas">
       <created>1462887374311</created>
@@ -991,15 +1070,22 @@
       <option name="project" value="LOCAL" />
       <updated>1463741241111</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="rename callback drive">
+      <created>1463741290650</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1463741290650</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45954000" />
+    <option name="totallyTimeSpent" value="46335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1012,7 +1098,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23971723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23971723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1084,7 +1170,8 @@
     <MESSAGE value="rooting connection" />
     <MESSAGE value="Requête google drive vers bdd&#10;googledrive mis à jour" />
     <MESSAGE value="Correction d'une requête google drive, gestion des callback drive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction d'une requête google drive, gestion des callback drive" />
+    <MESSAGE value="rename callback drive" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename callback drive" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1096,13 +1183,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/App.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/html/connection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1177,13 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1355,20 +1428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/MonNuage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="163" column="35" selection-start-line="163" selection-start-column="35" selection-end-line="163" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1463733159697" expanded="true" signature="2719:2815" ph="SELECT * FRO... users" />
-            <marker date="1463733159697" expanded="true" signature="3585:3671" ph="UPDATE users... " />
-            <marker date="1463733159697" expanded="true" signature="5467:5547" ph="SELECT * FRO... users" />
-            <marker date="1463733159697" expanded="true" signature="6995:7129" ph="INSERT INTO users... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/jdbc/JDBCMysSQL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
@@ -1394,24 +1453,6 @@
             <marker date="1463741210270" expanded="true" signature="10831:10850" ph="SELECT foo F... bar" />
             <marker date="1463741210270" expanded="true" signature="11001:11020" ph="SELECT foo F... bar" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1474,6 +1515,52 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/callbacks/MonNuage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="163" column="35" selection-start-line="163" selection-start-column="35" selection-end-line="163" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1463733159697" expanded="true" signature="2719:2815" ph="SELECT * FRO... users" />
+            <marker date="1463733159697" expanded="true" signature="3585:3671" ph="UPDATE users... " />
+            <marker date="1463733159697" expanded="true" signature="5467:5547" ph="SELECT * FRO... users" />
+            <marker date="1463733159697" expanded="true" signature="6995:7129" ph="INSERT INTO users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/Dropbox/Dropbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/cloudServices/GoogleDrive/GoogleDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ultimateCloudServer/src/main/java/com/ultimateCloud/App/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

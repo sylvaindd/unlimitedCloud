@@ -1,6 +1,7 @@
 package com.ultimateCloud.App;
 
 import com.ultimateCloud.App.callbacks.AskAuthorise;
+import com.ultimateCloud.App.callbacks.AskAuthoriseDrive;
 import com.ultimateCloud.App.callbacks.Callbackdropbox;
 import com.ultimateCloud.App.callbacks.MonNuage;
 import org.eclipse.jetty.server.Server;
@@ -40,9 +41,20 @@ public class App
         ServletContextHandler handlerAskAuthorise = new ServletContextHandler(server, "/lebonnuage/askauthorise");
         handlerAskAuthorise.addServlet(AskAuthorise.class, "/");
 
+        ServletContextHandler handlerCallbackGoogleDriveauthorise = new ServletContextHandler(server, "/lebonnuage/callbackDriveauthorise");
+        handlerCallbackdropboxauthorise.addServlet(Callbackdropbox.class, "/");
+
+
+        ServletContextHandler handlerAskDriveAuthorise = new ServletContextHandler(server, "/lebonnuage/askDriveauthorise");
+        handlerAskAuthorise.addServlet(AskAuthoriseDrive.class, "/");
+
         HandlerCollection collection = new HandlerCollection();
+        // Dropbox services
         collection.addHandler(handlerCallbackdropboxauthorise);
         collection.addHandler(handlerAskAuthorise);
+        // GoogleDrive services
+        collection.addHandler(handlerCallbackGoogleDriveauthorise);
+        collection.addHandler(handlerAskDriveAuthorise);
 
         try
         {
