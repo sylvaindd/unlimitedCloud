@@ -21,10 +21,16 @@ import java.util.List;
  */
 public class WebSocketUtils {
     public static JSONObject mkdir(String fileName,User user){
-            GoogleDrive googleDrive = new GoogleDrive();
+        GoogleDrive googleDrive = new GoogleDrive();
         List<String> listTokenDropBox = JDBCMysSQL.getInstance().getAllTokenCloudFromUser(2,String.valueOf(user.getId()));
-      return   googleDrive.mkdir(fileName,listTokenDropBox.get(0));
+        return   googleDrive.mkdir(fileName,listTokenDropBox.get(0));
     }
+    public static JSONObject rm(String fileName,User user){
+        GoogleDrive googleDrive = new GoogleDrive();
+        List<String> listTokenDropBox = JDBCMysSQL.getInstance().getAllTokenCloudFromUser(2,String.valueOf(user.getId()));
+        return   googleDrive.rm(fileName,listTokenDropBox.get(0));
+    }
+
     public static JSONObject getFilesAndFolders(String path, User user){
         JSONObject jsonReturn = new JSONObject();
         List<FileSystem> allFileSystem = new ArrayList<>();
