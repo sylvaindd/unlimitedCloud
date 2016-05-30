@@ -6,7 +6,7 @@
 <div class="elements">
     <context-menu-holder></context-menu-holder>
     <div *ngFor="let dossier of dossiers" class="element">
-        <dossierComponent [context-menu]="linkFolder" [dossier]=dossier></dossierComponent>
+        <dossierComponent [context-menu]="linkFolder" [dossier]=dossier (click)="goDeeper(dossier.getFullName())"></dossierComponent>
     </div>
     <div *ngFor="let fichier of fichiers" class="element">
         <fichierComponent [context-menu]="linkFile" [fichier]=fichier></fichierComponent>

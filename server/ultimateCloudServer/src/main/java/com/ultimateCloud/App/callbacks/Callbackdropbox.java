@@ -1,7 +1,6 @@
 package com.ultimateCloud.App.callbacks;
 
 import com.ultimateCloud.App.cloudServices.Dropbox.Dropbox;
-import com.ultimateCloud.App.jdbc.JDBCMysSQL;
 import com.ultimateCloud.App.models.User;
 import org.eclipse.jetty.http.HttpStatus;
 import org.json.JSONObject;
@@ -27,7 +26,7 @@ public class Callbackdropbox extends HttpServlet {
 		if (code != null && code != "") {
 			// onrécupère le code
 			// store code in BDD
-			JDBCMysSQL.getInstance().addDropBoxCodeToOurAccount(code, user_id, ourToken);
+//			JDBCMysSQL.getInstance().addDropBoxCodeToOurAccount(code, user_id, ourToken);
 			// and asktoken
 			System.out.println("code" + code);
 			Dropbox dropbox = new Dropbox();

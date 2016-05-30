@@ -49,8 +49,9 @@ export class WebSocketService {
         }.bind(this);
     }
 
-    createFolder(name) {
-
+    goDeeper(path){
+        let json = {function: "getFilesFolders", path: path};
+        this.sendJson(json);
     }
 
     mkdir(name) {

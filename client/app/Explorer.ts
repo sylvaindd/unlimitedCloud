@@ -27,7 +27,7 @@ export class Explorer {
 
     private dossiers:Array<Dossier>;
     private fichiers:Array<Fichier>;
-
+    private lastPath = "/";
     currentFileId:number;
     currentFolderId:number;
 
@@ -59,8 +59,10 @@ export class Explorer {
         this.webSocketService.callBackGetFiles = function (data) {
             this.dossiers = new Array<Dossier>();
             this.fichiers = new Array<Fichier>();
+            if (this.lastPath != "/" && this.lastPath != "")
+                this.dossiers.push(new Dossier(-1, "...", "balec", "/"));
             for (let folder of data.folders) {
-                this.dossiers.push(new Dossier(folder.id, folder.nom, folder.type));
+                this.dossiers.push(new Dossier(folder.id, folder.nom, folder.type, this.lastPath));
             }
             for (let file of data.files) {
                 this.fichiers.push(new Fichier(file.id, file.nom, file.type));
@@ -79,5 +81,21 @@ export class Explorer {
         for (let i:number = 0; i < 30; i++) {
             this.fichiers.push(new Fichier("fichier" + i, 20));
         }
+    }
+
+    goDeeper(path) {
+        if (path.indexOf("...", 1) > 0) {
+            this.lastPath = this.lastPath.substr(0, this.lastPath.lastIndexOf("/"));
+            this.lastPath = this.lastPath.substr(0, this.lastPath.lastIndexOf("/") + 1);
+            if (this.lastPath.length == 1)
+                this.lastPath = "";
+            this.webSocketService.goDeeper(this.lastPath);
+        } else {
+            if (path.substring(0,1) != "/" && path.length > 1)
+                path = "/" + path;
+            this.webSocketService.goDeeper(path);
+            this.lastPath = path + "/";
+        }
+        console.log("PATH : " + this.lastPath);
     }
 }
